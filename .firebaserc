@@ -1,0 +1,11 @@
+{
+  "projects": {
+    "default": "teammonki-a2221"
+  },
+  "targets": {},
+  "etags": {
+    "teammonki-a2221": {
+      "extensionInstances": {}
+    }
+  }
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monki Insights - Team Monki</title>
+    <link rel="stylesheet" href="MonkiInsights.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Team Monki Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#about">About</a>
+                    <ul class="dropdown-content">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="socials.html">Socials</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#team">Team</a>
+                    <ul class="dropdown-content">
+                        <li><a href="TeamMembers.html">Team Members</a></li>
+                    </ul>
+                </li>
+                <li><a href="Journey.html">Journey</a></li>
+                <li class="dropdown">
+                    <a href="#community">Community</a>
+                    <ul class="dropdown-content">
+                        <li><a href="MonkiInsights.html">Monki Insights</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#contact">Contact</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#contact-us">Contact Us</a></li>
+                        <li><a href="#social-media">Social Media</a></li>
+                        <li><a href="#support-help">Support/Help</a></li>
+                        <li><a href="#business-inquiries">Business Inquiries</a></li>
+                        <li><a href="#career">Career</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- User Login Button -->
+            <div class="user-auth">
+                <button id="loginBtn" class="login-btn">
+                    <i class="fas fa-user"></i> 登录
+                </button>
+                <div class="user-profile hidden">
+                    <img src="https://via.placeholder.com/40" alt="User Profile" class="user-avatar">
+                    <div class="user-dropdown">
+                        <ul>
+                            <li><a href="#profile">个人资料</a></li>
+                            <li><a href="#purchases">已购文章</a></li>
+                            <li><a href="#settings">设置</a></li>
+                            <li><a href="#logout" id="logoutBtn">退出登录</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>MONKI INSIGHTS</h1>
+            <p class="hero-subtitle">战队成员的专业见解与卡组分享</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <main class="main-content">
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="filter-type">文章类型</label>
+                        <select id="filter-type">
+                            <option value="all">全部</option>
+                            <option value="free">免费</option>
+                            <option value="paid">付费</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-author">作者</label>
+                        <select id="filter-author">
+                            <option value="all">全部</option>
+                            <option value="terry">Terry Chan</option>
+                            <option value="justin">Justin Wong</option>
+                            <option value="waikit">Yiam Wai Kit</option>
+                            <option value="tommy">Tommy Leong</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-sort">排序方式</label>
+                        <select id="filter-sort">
+                            <option value="newest">最新发布</option>
+                            <option value="oldest">最早发布</option>
+                            <option value="popular">最受欢迎</option>
+                        </select>
+                    </div>
+                    <button class="filter-button">应用筛选</button>
+                </div>
+            </section>
+
+            <!-- Articles Grid -->
+            <section class="articles-section">
+                <div class="articles-grid">
+                    <!-- Article 1 -->
+                    <div class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://via.placeholder.com/300x200" alt="文章缩略图">
+                            <div class="article-price free">免费</div>
+                        </div>
+                        <div class="article-info">
+                            <div class="article-meta">
+                                <span class="article-date">2025-04-15</span>
+                                <span class="article-author">
+                                    <img src="images/team/leadership/captain.jpg" alt="Terry Chan" class="author-avatar">
+                                    Terry Chan
+                                </span>
+                            </div>
+                            <h3 class="article-title">初学者指南：了解当前PTCG标准赛制环境</h3>
+                            <p class="article-excerpt">本文将为新手玩家介绍当前PTCG标准赛制的基本环境，包括主流卡组类型和基础战术...</p>
+                            <a href="article-1.html" class="read-button">阅读文章</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://via.placeholder.com/300x200" alt="文章缩略图">
+                            <div class="article-price paid">¥15</div>
+                        </div>
+                        <div class="article-info">
+                            <div class="article-meta">
+                                <span class="article-date">2025-04-10</span>
+                                <span class="article-author">
+                                    <img src="images/team/players/player1.jpg" alt="Justin Wong" class="author-avatar">
+                                    Justin Wong
+                                </span>
+                            </div>
+                            <h3 class="article-title">Lost Box卡组详解：构筑思路与对局策略</h3>
+                            <p class="article-excerpt">深入分析Lost Box卡组的构筑思路、核心卡牌选择以及面对不同对手的策略调整...</p>
+                            <a href="article-2.html" class="read-button">阅读文章</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://via.placeholder.com/300x200" alt="文章缩略图">
+                            <div class="article-price paid">¥20</div>
+                        </div>
+                        <div class="article-info">
+                            <div class="article-meta">
+                                <span class="article-date">2025-04-05</span>
+                                <span class="article-author">
+                                    <img src="images/team/players/player2.jpg" alt="Yiam Wai Kit" class="author-avatar">
+                                    Yiam Wai Kit
+                                </span>
+                            </div>
+                            <h3 class="article-title">Mew VMAX进阶技巧：如何应对当前环境中的克制卡组</h3>
+                            <p class="article-excerpt">本文分享Mew VMAX卡组在面对不利对局时的技巧与策略，帮助玩家提升胜率...</p>
+                            <a href="article-3.html" class="read-button">阅读文章</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 4 -->
+                    <div class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://via.placeholder.com/300x200" alt="文章缩略图">
+                            <div class="article-price free">免费</div>
+                        </div>
+                        <div class="article-info">
+                            <div class="article-meta">
+                                <span class="article-date">2025-03-28</span>
+                                <span class="article-author">
+                                    <img src="images/team/players/player3.jpg" alt="Tommy Leong" class="author-avatar">
+                                    Tommy Leong
+                                </span>
+                            </div>
+                            <h3 class="article-title">比赛准备指南：如何高效备战PTCG锦标赛</h3>
+                            <p class="article-excerpt">从卡组选择到心理准备，全方位指导玩家如何为即将到来的PTCG锦标赛做好准备...</p>
+                            <a href="article-4.html" class="read-button">阅读文章</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 5 -->
+                    <div class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://via.placeholder.com/300x200" alt="文章缩略图">
+                            <div class="article-price paid">¥25</div>
+                        </div>
+                        <div class="article-info">
+                            <div class="article-meta">
+                                <span class="article-date">2025-03-20</span>
+                                <span class="article-author">
+                                    <img src="images/team/leadership/captain.jpg" alt="Terry Chan" class="author-avatar">
+                                    Terry Chan
+                                </span>
+                            </div>
+                            <h3 class="article-title">冠军卡组分析：2025年马来西亚地区赛冠军卡组详解</h3>
+                            <p class="article-excerpt">独家分析2025年马来西亚地区赛冠军使用的卡组构筑思路、核心战术和关键对局回顾...</p>
+                            <a href="article-5.html" class="read-button">阅读文章</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 6 -->
+                    <div class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://via.placeholder.com/300x200" alt="文章缩略图">
+                            <div class="article-price paid">¥18</div>
+                        </div>
+                        <div class="article-info">
+                            <div class="article-meta">
+                                <span class="article-date">2025-03-15</span>
+                                <span class="article-author">
+                                    <img src="images/team/players/player4.jpg" alt="Eden Lee" class="author-avatar">
+                                    Eden Lee
+                                </span>
+                            </div>
+                            <h3 class="article-title">Gardevoir ex卡组构筑指南：核心卡牌选择与替换方案</h3>
+                            <p class="article-excerpt">详细解析Gardevoir ex卡组的构筑思路，包括核心卡牌选择、能量配比以及针对不同环境的替换方案...</p>
+                            <a href="article-6.html" class="read-button">阅读文章</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Team Monki</h3>
+                <p>One of the best PTCG team in Malaysia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61567936103241&mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/teammonki_my?igsh=Z21iOGplZXI0NDcx" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="TeamMembers.html">Team</a></li>
+                    <li><a href="MonkiInsights.html">Insights</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Team Monki. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>登录</h2>
+            <div class="login-options">
+                <button class="google-login">
+                    <i class="fab fa-google"></i> 使用Google账号登录
+                </button>
+                <div class="divider">
+                    <span>或</span>
+                </div>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email">电子邮箱</label>
+                        <input type="email" id="email" placeholder="输入您的电子邮箱">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input type="password" id="password" placeholder="输入您的密码">
+                    </div>
+                    <button type="submit" class="submit-btn">登录</button>
+                </form>
+                <p class="register-link">还没有账号？<a href="#register">立即注册</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="insights.js"></script>
+</body>
+</html>
