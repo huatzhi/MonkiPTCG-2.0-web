@@ -2,6 +2,8 @@
 
 This is the official website for Team Monki, Malaysia's premier Pokemon Trading Card Game team.
 
+
+
 ## Project Structure
 
 ```
