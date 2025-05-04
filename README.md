@@ -74,3 +74,8 @@ To contribute to the website:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details. 
+
+## Tools and libaries
+1. TaiWind CSS
+2. Shadcn UI
+3. Ract
