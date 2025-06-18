@@ -1,0 +1,673 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(26, 26, 26, 0.95);
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 1rem 0;
+    background-color: rgba(26, 26, 26, 0.85);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 2rem;
+}
+
+.logo img {
+    height: 100px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+.nav-links li:first-child {
+    margin-left: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #7e1785;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 4px;
+    padding: 8px 0;
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #333;
+    color: #10e07f;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+    margin: -3rem auto 0;
+    padding: 0 2rem;
+    position: static;
+    left: auto;
+    transform: none;
+    justify-content: center;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Team Page Styles */
+.team-page {
+    padding: 3rem;
+}
+
+.team-page h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* Team Grid */
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* Team Sections */
+.team-section {
+    margin-bottom: 0;
+}
+
+.section-title {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title .note {
+    font-size: 1rem;
+    color: #aaa;
+    font-style: italic;
+    margin-left: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00ff00, transparent);
+}
+
+.team-row {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.invisible-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Leadership Section - 2 cards in one row */
+.leadership .team-row {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Management Section - 2 cards in one row */
+.management .team-row {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Players Section - 3 cards per row */
+.players .team-row {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    height: 350px;
+    background-image: url('/images/team/team-hero.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px 50px;
+}
+
+.hero-content h1 {
+    color: #fff;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+    font-weight: 700;
+    animation: fadeIn 1s ease-in-out;
+    margin: 0;
+}
+
+.hero-subtitle {
+    color: #fff;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    margin-top: 10px;
+    animation: fadeIn 1.2s ease-in-out;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Team Member Card */
+.team-member {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 255, 0, 0.15);
+    position: relative;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-height: 720px;
+    width: 100%;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.team-member:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 255, 0, 0.15);
+    border-color: rgba(0, 255, 0, 0.3);
+}
+
+.leadership .team-member,
+.management .team-member {
+    min-height: 720px;
+}
+
+.players .team-member {
+    min-height: 400px;
+}
+
+.member-image {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+}
+
+.member-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.08);
+}
+
+.member-info {
+    padding: 1.8rem;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}
+
+.member-info h3 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.role {
+    color: #00ff00;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.member-details {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.detail-item i {
+    color: #00ff00;
+    font-size: 1rem;
+    margin-right: 8px;
+}
+
+.detail-item .zodiac {
+    margin-left: 5px;
+}
+
+.detail-item .zodiac-symbol {
+    font-size: 1.2em;
+    margin-right: 5px;
+    color: #ff6b6b;
+    display: inline-block;
+    min-width: 1.2em;
+    text-align: center;
+}
+
+.member-info .social-links {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-top: 1.2rem;
+}
+
+.member-info .social-links a {
+    color: #fff;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.member-info .social-links a:hover {
+    color: #00ff00;
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.member-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.member-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.member-front,
+.member-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: rgba(26, 26, 26, 0.95);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.member-back {
+    transform: rotateY(180deg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.member-back h4 {
+    color: #10e07f;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #10e07f;
+    padding-bottom: 0.5rem;
+}
+
+.member-back ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.member-back li {
+    margin-bottom: 1rem;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.member-back ul.achievement-list {
+    margin-left: 1.5rem;
+}
+
+.member-back ul.achievement-list li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+}
+
+.tournament-table {
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 0.5rem 0;
+}
+
+.tournament-table::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tournament-table::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tournament-table::-webkit-scrollbar-thumb {
+    background: #10e07f;
+    border-radius: 3px;
+}
+
+.tournament-table::-webkit-scrollbar-thumb:hover {
+    background: #0dbf6a;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.75rem;
+    background: rgba(16, 224, 127, 0.1);
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-row div {
+    padding: 0.25rem;
+}
+
+.table-row div:last-child {
+    text-align: right;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 3rem 0 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #7e1785;
+}
+
+/* Footer中的社交媒体图标 */
+.footer-section .social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-section .social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section .social-links a:hover {
+    color: #7e1785;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .players .team-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .leadership .team-row,
+    .management .team-row,
+    .players .team-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-section {
+        height: 200px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 150px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .member-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .role {
+        font-size: 1rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .member-back {
+        background: linear-gradient(135deg, #0a1a0a, #1a0a1a);
+    }
+    
+    .member-back h4 {
+        color: #00ff00;
+    }
+    
+    .member-back li {
+        color: #ddd;
+    }
+}
+
+.team-section.players .member-card {
+    min-height: 600px;
+}
+
+.team-section.players .member-back h4 {
+    font-size: 1.2rem;
+}
+
+.team-section.players .member-back li {
+    font-size: 0.9rem;
+}
+
+.team-section.players .member-back .achievement-list li {
+    font-size: 0.85rem;
+}
+
+.team-section.players .tournament-table {
+    font-size: 0.85rem;
+} 
