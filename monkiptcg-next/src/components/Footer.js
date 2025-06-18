@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export default function Footer() {
+    const year = new Date().getFullYear();
     return (
         <footer>
             <div className="footer-content">
@@ -26,7 +27,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; 2025 Team Monki. All rights reserved.</p>
+                <p>&copy; {year} Team Monki. All rights reserved.</p>
             </div>
         </footer>
     );
