@@ -96,19 +96,19 @@ export default function AboutUsPage() {
               <h2>Our Team</h2>
               <div className="team-grid">
                 <div className="team-member">
-                  <img src="/images/team/players/player1.jpg" alt="Team Member 1" />
-                  <h3>John Doe</h3>
-                  <p>Team Captain</p>
+                  <img src="/images/team/players/player5.jpg" alt="Team Member 5" />
+                  <h3>Nick Kee</h3>
+                  <p>Main Player</p>
                 </div>
                 <div className="team-member">
-                  <img src="/images/team/players/player2.jpg" alt="Team Member 2" />
-                  <h3>Jane Smith</h3>
-                  <p>Vice Captain</p>
+                  <img src="/images/team/leadership/manager.jpg" alt="Team Member 3" />
+                  <h3>Bobby Ao</h3>
+                  <p>Manager</p>
                 </div>
                 <div className="team-member">
                   <img src="/images/team/players/player3.jpg" alt="Team Member 3" />
-                  <h3>Mike Johnson</h3>
-                  <p>Strategy Coach</p>
+                  <h3>Tommy Leong</h3>
+                  <p>Main Player</p>
                 </div>
               </div>
             </div>

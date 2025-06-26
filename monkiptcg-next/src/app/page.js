@@ -81,23 +81,23 @@ export default function HomePage() {
             <li className="dropdown">
               <a href="#about">About</a>
               <ul className="dropdown-content">
-                <li><a href="about-us">About Us</a></li>
-                <li><a href="socials">Socials</a></li>
-                <li><a href="news">News</a></li>
-                <li><a href="partners">Partners</a></li>
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="/socials">Socials</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/partners">Partners</a></li>
               </ul>
             </li>
             <li className="dropdown">
               <a href="#team">Team</a>
               <ul className="dropdown-content">
-                <li><a href="TeamMembers">Team Members</a></li>
+                <li><a href="/team-members">Team Members</a></li>
               </ul>
             </li>
-            <li><a href="Journey">Journey</a></li>
+            <li><a href="/journey">Journey</a></li>
             <li className="dropdown">
               <a href="#community">Community</a>
               <ul className="dropdown-content">
-                <li><a href="MonkiInsights">Monki Insights</a></li>
+                <li><a href="/monki-insights">Monki Insights</a></li>
               </ul>
             </li>
             <li className="dropdown">
