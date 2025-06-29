@@ -109,7 +109,7 @@ header.scrolled {
 }
 
 /* Container Layout */
-.container {
+.team-container {
     display: flex;
     max-width: 1400px;
     width: 100%;

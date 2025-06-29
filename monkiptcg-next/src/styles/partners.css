@@ -137,6 +137,8 @@ header.scrolled {
     width: 100%;
 }
 
+/* Partners Page Specific Styles */
+
 /* Partners Page Styles */
 .partners-page {
     background-color: rgba(255, 255, 255, 0.05);
@@ -229,17 +231,16 @@ header.scrolled {
     background: rgba(0, 255, 0, 0.1);
     color: #00ff00;
     text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
     transition: all 0.3s ease;
-    margin-top: 1rem;
+    font-weight: 600;
 }
 
 .sponsor-button:hover {
     background: rgba(0, 255, 0, 0.2);
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
 }
 
 /* Footer Styles */
@@ -302,31 +303,25 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 1rem;
-    }
-}
-
+/* Partners Page Responsive Design */
 @media (max-width: 768px) {
     .partners-page {
-        padding: 1.5rem;
+        padding: 2rem;
     }
-
+    
     .partners-page h1 {
         font-size: 2.5rem;
     }
-
+    
     .partners-section {
         padding: 1.5rem;
     }
-
+    
     .sponsor-content img {
         max-width: 200px;
         max-height: 200px;
     }
-
+    
     .sponsor-content h3 {
         font-size: 1.5rem;
     }
@@ -336,19 +331,15 @@ footer {
     .partners-page h1 {
         font-size: 2rem;
     }
-
+    
     .sponsor-content img {
         max-width: 150px;
         max-height: 150px;
     }
 }
 
-/* Loading Animation */
+/* Animation */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
     to {
         opacity: 1;
         transform: translateY(0);

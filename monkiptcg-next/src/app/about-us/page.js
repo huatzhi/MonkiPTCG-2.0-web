@@ -22,11 +22,6 @@ export default function AboutUsPage() {
 
   return (
     <>
-      <head>
-        <title>About Us - Team Monki</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
-      </head>
       {/* Header Section */}
       <header style={{ backgroundColor: headerScrolled ? 'rgba(26, 26, 26, 0.95)' : '#1a1a1a' }}>
         <nav className="navbar">
@@ -95,17 +90,17 @@ export default function AboutUsPage() {
             <div className="about-section">
               <h2>Our Team</h2>
               <div className="team-grid">
-                <div className="team-member">
+                <div className="about-team-member">
                   <img src="/images/team/players/player5.jpg" alt="Team Member 5" />
                   <h3>Nick Kee</h3>
                   <p>Main Player</p>
                 </div>
-                <div className="team-member">
+                <div className="about-team-member">
                   <img src="/images/team/leadership/manager.jpg" alt="Team Member 3" />
                   <h3>Bobby Ao</h3>
                   <p>Manager</p>
                 </div>
-                <div className="team-member">
+                <div className="about-team-member">
                   <img src="/images/team/players/player3.jpg" alt="Team Member 3" />
                   <h3>Tommy Leong</h3>
                   <p>Main Player</p>

@@ -121,7 +121,7 @@ export default function TeamMembersPage() {
       </section>
 
       {/* Main Content */}
-      <div className="container">
+      <div className="team-container">
         <main className="main-content">
           <section className="team-page">
             {/* Team Members Grid */}
