@@ -402,7 +402,7 @@ export default function TeamMembersPage() {
                             </div>
                           <p className="motto">"Metal or Meta?"</p>
                           <div className="social-links">
-                            <a href="https://www.facebook.com/yiam.waikit?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/waikit960909?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/zenon_kit?igsh=ZXNwZjlzd3cyZnJ4" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
                           </div>
                         </div>
@@ -439,7 +439,7 @@ export default function TeamMembersPage() {
                             </div>
                           <p className="motto">"Adapt and overcome every challenge"</p>
                           <div className="social-links">
-                            <a href="https://www.facebook.com/mike.johnson.123?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/tommylcff?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/tommy._.lcf?igsh=MWhwdnNtMjk3ZHI3dQ==" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
                           </div>
                         </div>
@@ -881,8 +881,8 @@ export default function TeamMembersPage() {
                             </div>
                           <p className="motto">"Every battle is a chance to grow stronger"</p>
                           <div className="social-links">
-                            <a href="https://www.facebook.com/weicheng.lim.5?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/weicheng136?igsh=ZDNmNjJ6cmgxcGlw" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
+                            <a href="" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
+                            <a href="" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
                           </div>
                         </div>
                       </div>
@@ -920,8 +920,8 @@ export default function TeamMembersPage() {
                             </div>
                           <p className="motto">"Every battle is a chance to grow stronger"</p>
                           <div className="social-links">
-                            <a href="https://www.facebook.com/weiji.tan.5?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/weiji.tan?igsh=ZDNmNjJ6cmgxcGlw" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/IJNNEKO?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/mezibinlaide?igsh=NDRnNmNwOGYwZ2dx" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
                           </div>
                         </div>
                       </div>
