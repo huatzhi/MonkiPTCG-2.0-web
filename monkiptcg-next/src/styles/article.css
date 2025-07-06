@@ -41,13 +41,38 @@ header.scrolled {
     position: relative;
 }
 
-.logo {
+/* Logo Container Styles - 确保与globals.css一致 */
+.logo-container {
     position: absolute;
     left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     height: 100px;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+}
+
+.partner-logo img {
+    height: 60px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo img:hover {
+    opacity: 1;
 }
 
 .nav-links {

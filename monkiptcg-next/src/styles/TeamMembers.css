@@ -5,6 +5,105 @@
     box-sizing: border-box;
 }
 
+/* Force reset for Team Members page to ensure consistency */
+.team-page * {
+    box-sizing: border-box;
+}
+
+/* Body styles for Team Members page */
+body.team-members-page {
+    background-color: #1a1a1a !important;
+    color: #fff !important;
+    font-family: 'Poppins', sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+/* Force override any conflicting styles */
+body.team-members-page * {
+    box-sizing: border-box !important;
+}
+
+.team-page {
+    /* Force page-specific styles */
+    font-family: 'Poppins', sans-serif !important;
+    color: #fff !important;
+}
+
+/* Override any global container styles */
+body.team-members-page .container {
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+}
+
+/* Override any global hero-section styles */
+body.team-members-page .hero-section {
+    background: url('/images/team/team-hero.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    height: 40vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Override any global hero-content styles */
+body.team-members-page .hero-content {
+    text-align: center !important;
+    z-index: 2 !important;
+    position: relative !important;
+}
+
+body.team-members-page .hero-content h1 {
+    font-size: 4rem !important;
+    color: #fff !important;
+    margin-bottom: 1rem !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px !important;
+}
+
+body.team-members-page .hero-subtitle {
+    font-size: 1.5rem !important;
+    color: #ddd !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Override any global team-section styles - 确保板块默认可见 */
+body.team-members-page .team-section {
+    margin-bottom: 3rem !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out !important;
+    min-height: 550px !important;
+}
+
+body.team-members-page .team-section.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Override any global team-member styles - 确保卡片默认可见 */
+body.team-members-page .team-member {
+    width: 100% !important;
+    max-width: 350px !important;
+    height: 450px !important;
+    perspective: 1000px !important;
+    margin-bottom: 2rem !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: fadeIn 0.5s ease-in forwards !important;
+}
+
+body.team-members-page .team-member.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 /* Header Styles */
 header {
     background-color: rgba(26, 26, 26, 0.95);
@@ -32,13 +131,38 @@ header.scrolled {
     position: relative;
 }
 
-.logo {
+/* Logo Container Styles - 确保与globals.css一致 */
+.logo-container {
     position: absolute;
     left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     height: 100px;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+}
+
+.partner-logo img {
+    height: 60px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo img:hover {
+    opacity: 1;
 }
 
 .nav-links {
@@ -108,12 +232,12 @@ header.scrolled {
     color: #10e07f;
 }
 
-/* Container Layout */
-.team-container {
+/* Team Members Page Specific Container */
+.team-page .container {
     display: flex;
     max-width: 1400px;
     width: 100%;
-    margin: -3rem auto 0;
+    margin: 0 auto; /* 覆盖全局的 margin: 100px auto 0 */
     padding: 0 2rem;
     position: static;
     left: auto;
@@ -121,16 +245,16 @@ header.scrolled {
     justify-content: center;
 }
 
-/* Main Content Styles */
-.main-content {
+.team-page .main-content {
     flex: 1;
     max-width: 1200px;
     width: 100%;
+    padding: 1rem 0;
 }
 
 /* Team Page Styles */
 .team-page {
-    padding: 3rem;
+    padding: 2rem 0;
 }
 
 .team-page h1 {
@@ -148,22 +272,35 @@ header.scrolled {
 .team-grid {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
     margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Team Sections */
+/* Team Sections - 统一管理，避免重复 */
 .team-section {
-    margin-bottom: 0;
+    margin-bottom: 3rem;
+    opacity: 1; /* 确保默认可见 */
+    transform: translateY(0); /* 确保默认位置 */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    min-height: 550px;
+}
+
+.team-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-title {
     color: #fff;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
     text-align: center;
     position: relative;
     padding-bottom: 1rem;
+    font-weight: 700;
 }
 
 .section-title .note {
@@ -201,86 +338,89 @@ header.scrolled {
     transform: translateY(0);
 }
 
-/* Leadership Section - 2 cards in one row */
-.leadership .team-row {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Management Section - 2 cards in one row */
+/* Team Row Layouts - 强制布局规则，确保从其他页面导航时保持一致 */
+.leadership .team-row,
 .management .team-row {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 1000px;
-    margin: 0 auto;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+    justify-items: center !important;
 }
 
-/* Players Section - 3 cards per row */
 .players .team-row {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1400px;
-    margin: 0 auto;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+    justify-items: center !important;
 }
 
-/* Hero Section */
-.hero-section {
-    width: 100%;
-    height: 350px;
-    background-image: url('/images/team/team-hero.jpg');
+/* 为body.team-members-page添加布局规则，确保最高优先级 */
+body.team-members-page .leadership .team-row,
+body.team-members-page .management .team-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+    justify-items: center !important;
+}
+
+body.team-members-page .players .team-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+    justify-items: center !important;
+}
+
+/* Hero Section - Team Members specific */
+.team-page .hero-section {
+    background: url('/images/team/team-hero.jpg');
     background-size: cover;
-    background-position: center 35%;
-    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 40vh;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    margin-top: 0;
     position: relative;
-    overflow: hidden;
+    margin-bottom: 2rem;
 }
 
-.hero-section::before {
+.team-page .hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+.team-page .hero-content {
     text-align: center;
-    width: 100%;
-    padding: 0 20px 50px;
+    z-index: 2;
+    position: relative;
 }
 
-.hero-content h1 {
+.team-page .hero-content h1 {
+    font-size: 4rem;
     color: #fff;
-    font-size: 3.5rem;
+    margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 3px;
     font-weight: 700;
-    animation: fadeIn 1s ease-in-out;
-    margin: 0;
+    letter-spacing: 3px;
 }
 
-.hero-subtitle {
-    color: #fff;
-    font-size: 1.2rem;
+.team-page .hero-subtitle {
+    font-size: 1.5rem;
+    color: #ddd;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    letter-spacing: 1px;
-    margin-top: 10px;
-    animation: fadeIn 1.2s ease-in-out;
-    font-style: italic;
 }
 
+/* Animation Keyframes - 优化动画，确保卡片始终可见 */
 @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 0.8; /* 从80%透明度开始，而不是完全透明 */
+        transform: translateY(10px); /* 减少位移距离 */
     }
     to {
         opacity: 1;
@@ -288,242 +428,428 @@ header.scrolled {
     }
 }
 
-/* Team Member Card */
-.team-member {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0, 255, 0, 0.15);
-    position: relative;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    min-height: 720px;
-    width: 100%;
-    perspective: 1000px;
-    cursor: pointer;
+/* Team Member Cards - Team Members specific - 强制高度规则 */
+.team-page .team-member:hover {
+    transform: translateY(-5px);
 }
 
-.team-member:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(0, 255, 0, 0.15);
-    border-color: rgba(0, 255, 0, 0.3);
+.team-page .leadership .team-member,
+.team-page .management .team-member {
+    animation-delay: 0.2s;
+    height: 500px !important;
 }
 
-.leadership .team-member,
-.management .team-member {
-    min-height: 720px;
+.team-page .players .team-member {
+    animation-delay: 0.4s;
+    height: 450px !important;
 }
 
-.players .team-member {
-    min-height: 400px;
+/* 为body.team-members-page添加高度规则，确保最高优先级 */
+body.team-members-page .leadership .team-member,
+body.team-members-page .management .team-member {
+    height: 500px !important;
 }
 
-.member-image {
-    position: relative;
-    padding-top: 100%;
-    overflow: hidden;
-    border-radius: 16px 16px 0 0;
+body.team-members-page .players .team-member {
+    height: 450px !important;
 }
 
-.member-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.team-member:hover .member-image img {
-    transform: scale(1.08);
-}
-
-.member-info {
-    padding: 1.8rem;
-    text-align: center;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
-}
-
-.member-info h3 {
-    color: #fff;
-    font-size: 1.6rem;
-    margin-bottom: 0.6rem;
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.role {
-    color: #00ff00;
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
-    font-weight: 500;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.member-details {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1.2rem;
-}
-
-.detail-item {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-}
-
-.detail-item i {
-    color: #00ff00;
-    font-size: 1rem;
-    margin-right: 8px;
-}
-
-.detail-item .zodiac {
-    margin-left: 5px;
-}
-
-.detail-item .zodiac-symbol {
-    font-size: 1.2em;
-    margin-right: 5px;
-    color: #ff6b6b;
-    display: inline-block;
-    min-width: 1.2em;
-    text-align: center;
-}
-
-.member-info .social-links {
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
-    margin-top: 1.2rem;
-}
-
-.member-info .social-links a {
-    color: #fff;
-    font-size: 1.6rem;
-    transition: all 0.3s ease;
-    opacity: 0.8;
-}
-
-.member-info .social-links a:hover {
-    color: #00ff00;
-    opacity: 1;
-    transform: translateY(-3px);
-}
-
-.member-card {
+/* 卡片基础样式 */
+.team-page .member-card {
     position: relative;
     width: 100%;
     height: 100%;
+    transition: transform 0.6s, border-color 0.3s ease, box-shadow 0.3s ease;
     transform-style: preserve-3d;
-    transition: transform 0.6s;
     cursor: pointer;
+    border-radius: 12px;
+    border: 2px solid rgba(16, 224, 127, 0.1);
+    box-shadow: 0 0 5px rgba(16, 224, 127, 0.1);
 }
 
-.member-card.flipped {
+.team-page .member-card:hover {
+    border-color: #10e07f;
+    box-shadow: 0 0 25px rgba(16, 224, 127, 0.4);
+    transform: scale(1.05);
+}
+
+.team-page .member-card.flipped {
     transform: rotateY(180deg);
 }
 
-.member-front,
-.member-back {
+.team-page .member-card.flipped:hover {
+    transform: rotateY(180deg) scale(1.05);
+    border-color: #10e07f;
+    box-shadow: 0 0 25px rgba(16, 224, 127, 0.4);
+}
+
+.team-page .member-front,
+.team-page .member-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    background: rgba(26, 26, 26, 0.95);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
-.member-back {
+/* 正面样式 */
+.team-page .member-front {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+.team-page .member-image {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-page .member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-page .member-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.9) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.team-page .member-info {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(26, 26, 26, 0.95);
+}
+
+.team-page .member-info h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.team-page .role {
+    color: #10e07f;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.team-page .birthday {
+    color: #ddd;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.team-page .birthday i {
+    color: #10e07f;
+}
+
+.team-page .motto {
+    color: #aaa;
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-page .social-links {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.team-page .social-links a {
+    color: #fff;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    padding: 0.4rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.team-page .social-links a:hover {
+    color: #10e07f;
+    background: rgba(16, 224, 127, 0.2);
+}
+
+/* 背面样式 */
+.team-page .member-back {
     transform: rotateY(180deg);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    justify-content: space-between;
 }
 
-.member-back h4 {
+.team-page .member-back h4 {
     color: #10e07f;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
     text-align: center;
     border-bottom: 2px solid #10e07f;
     padding-bottom: 0.5rem;
 }
 
-.member-back ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.member-back li {
+.team-page .achievements-section {
+    flex: 1;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-page .achievements-section h5 {
     color: #fff;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    flex-shrink: 0;
 }
 
-.member-back ul.achievement-list {
-    margin-left: 1.5rem;
-}
-
-.member-back ul.achievement-list li {
-    list-style-type: disc;
-    margin-bottom: 0.5rem;
-}
-
-.tournament-table {
-    max-height: 300px;
+.team-page .achievements-list {
+    list-style: none;
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
     overflow-y: auto;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    margin: 0.5rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: #10e07f rgba(255, 255, 255, 0.1);
 }
 
-.tournament-table::-webkit-scrollbar {
+/* 自定义滚动条样式 */
+.team-page .achievements-list::-webkit-scrollbar {
     width: 6px;
 }
 
-.tournament-table::-webkit-scrollbar-track {
+.team-page .achievements-list::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
-}
-
-.tournament-table::-webkit-scrollbar-thumb {
-    background: #10e07f;
     border-radius: 3px;
 }
 
-.tournament-table::-webkit-scrollbar-thumb:hover {
-    background: #0dbf6a;
+.team-page .achievements-list::-webkit-scrollbar-thumb {
+    background: #10e07f;
+    border-radius: 3px;
+    transition: background 0.3s ease;
 }
 
-.table-header {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0.75rem;
-    background: rgba(16, 224, 127, 0.1);
-    font-weight: bold;
-    position: sticky;
-    top: 0;
+.team-page .achievements-list::-webkit-scrollbar-thumb:hover {
+    background: #0bc06a;
 }
 
-.table-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0.75rem;
+.team-page .achievements-list li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.table-row div {
-    padding: 0.25rem;
+.team-page .achievements-list li:last-child {
+    border-bottom: none;
 }
 
-.table-row div:last-child {
-    text-align: right;
+.team-page .favorite-pokemon-section {
+    margin-top: auto;
+}
+
+.team-page .favorite-pokemon-section h5 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.team-page .favorite-pokemon {
+    color: #10e07f;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(16, 224, 127, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(16, 224, 127, 0.3);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .team-page .member-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .team-page .role {
+        font-size: 0.9rem;
+    }
+    
+    .team-page .motto {
+        font-size: 0.8rem;
+    }
+    
+    .team-page .member-back h4 {
+        font-size: 1.2rem;
+    }
+    
+    .team-page .achievements-list li {
+        font-size: 0.85rem;
+    }
+    
+    /* 移动端调整滚动区域高度 */
+    .team-page .leadership .achievements-list,
+    .team-page .management .achievements-list {
+        max-height: 200px;
+    }
+    
+    .team-page .players .achievements-list {
+        max-height: 150px;
+    }
+}
+
+/* Responsive Design - 强制响应式规则 */
+@media (max-width: 1024px) {
+    .leadership .team-row,
+    .management .team-row {
+        grid-template-columns: 1fr !important;
+    }
+    .players .team-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* 为body.team-members-page添加响应式规则 */
+    body.team-members-page .leadership .team-row,
+    body.team-members-page .management .team-row {
+        grid-template-columns: 1fr !important;
+    }
+    body.team-members-page .players .team-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-page .leadership .team-row,
+    .team-page .management .team-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-page .players .team-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    body.team-members-page .leadership .team-row,
+    body.team-members-page .management .team-row {
+        grid-template-columns: 1fr !important;
+    }
+    
+    body.team-members-page .players .team-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .team-page .hero-section {
+        height: 30vh;
+    }
+    
+    .team-page .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .team-page .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-page .hero-section {
+        height: 25vh;
+    }
+    
+    .team-page .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .team-page .member-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .team-page .role {
+        font-size: 0.9rem;
+    }
+    
+    .team-page .stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .team-page .member-back {
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .team-page .member-back h4 {
+        color: #10e07f;
+    }
+    
+    .team-page .member-back li {
+        color: #ccc;
+    }
+}
+
+/* Player-specific styles */
+.team-page .team-section.players .member-card {
+    height: 450px;
+}
+
+.team-page .team-section.players .member-back h4 {
+    font-size: 1.2rem;
+}
+
+.team-page .team-section.players .member-back li {
+    font-size: 0.9rem;
+}
+
+.team-page .team-section.players .member-back .achievement-list li {
+    font-size: 0.8rem;
+}
+
+.team-page .team-section.players .tournament-table {
+    max-height: 200px;
+}
+
+/* 为不同高度的卡片设置不同的滚动区域高度 */
+.team-page .leadership .achievements-list,
+.team-page .management .achievements-list {
+    max-height: 250px;
+}
+
+.team-page .players .achievements-list {
+    max-height: 180px;
 }
 
 /* Footer Styles */
@@ -551,7 +877,7 @@ footer {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .footer-section a {
@@ -587,87 +913,77 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .players .team-row {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* 特定板块的最小高度设置 */
+.leadership {
+    min-height: 550px;
 }
 
-@media (max-width: 768px) {
-    .leadership .team-row,
-    .management .team-row,
-    .players .team-row {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-section {
-        height: 200px;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
+.management {
+    min-height: 550px;
 }
 
-@media (max-width: 480px) {
-    .hero-section {
-        height: 150px;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .member-info h3 {
-        font-size: 1.3rem;
-    }
-    
-    .role {
-        font-size: 1rem;
-    }
-
-    .stats {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+.players {
+    min-height: 800px;
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-    .member-back {
-        background: linear-gradient(135deg, #0a1a0a, #1a0a1a);
-    }
-    
-    .member-back h4 {
-        color: #00ff00;
-    }
-    
-    .member-back li {
-        color: #ddd;
-    }
+/* 确保页面导航时的样式一致性 */
+.team-page .team-member,
+.team-page .team-section {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
 }
 
-.team-section.players .member-card {
-    min-height: 600px;
+/* 强制覆盖任何可能的隐藏样式 */
+.team-page .team-member.visible,
+.team-page .team-section.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
 }
 
-.team-section.players .member-back h4 {
-    font-size: 1.2rem;
+/* 确保卡片内容可见 */
+.team-page .member-card {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-.team-section.players .member-back li {
-    font-size: 0.9rem;
+.team-page .member-front,
+.team-page .member-back {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-.team-section.players .member-back .achievement-list li {
-    font-size: 0.85rem;
+/* 强制布局容器样式 */
+.team-page .team-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
-.team-section.players .tournament-table {
-    font-size: 0.85rem;
+.team-page .team-row {
+    display: grid !important;
+    gap: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+/* 为body.team-members-page添加容器规则 */
+body.team-members-page .team-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+body.team-members-page .team-row {
+    display: grid !important;
+    gap: 2rem !important;
+    margin-bottom: 2rem !important;
 } 

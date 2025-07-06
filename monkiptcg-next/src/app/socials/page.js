@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import '../../styles/Socials_styles.css';
 import Footer from '../../components/Footer';
+import Navigation from '../../components/Navigation';
 
 const Gallery = ({ platform, images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -65,46 +66,7 @@ export default function SocialsPage() {
         <>
             {/* Header Section */}
             <header>
-                <nav className="navbar">
-                    <div className="logo">
-                        <img src="/images/logo.png" alt="Team Monki Logo" />
-                    </div>
-                    <ul className="nav-links">
-                        <li><Link href="/">Home</Link></li>
-                        <li className="dropdown">
-                            <a href="#about">About</a>
-                            <ul className="dropdown-content">
-                                <li><Link href="/about-us">About Us</Link></li>
-                                <li><Link href="/socials">Socials</Link></li>
-                                <li><Link href="/news">News</Link></li>
-                                <li><Link href="/partners">Partners</Link></li>
-                            </ul>
-                        </li>
-                        <li className="dropdown">
-                            <a href="#team">Team</a>
-                            <ul className="dropdown-content">
-                                <li><Link href="/team-members">Team Members</Link></li>
-                            </ul>
-                        </li>
-                        <li><Link href="/journey">Journey</Link></li>
-                        <li className="dropdown">
-                            <a href="#community">Community</a>
-                            <ul className="dropdown-content">
-                                <li><Link href="/monki-insights">Monki Insights</Link></li>
-                            </ul>
-                        </li>
-                        <li className="dropdown">
-                            <a href="#contact">Contact</a>
-                            <ul className="dropdown-content">
-                                <li><a href="#contact-us">Contact Us</a></li>
-                                <li><a href="#social-media">Social Media</a></li>
-                                <li><a href="#support-help">Support/Help</a></li>
-                                <li><a href="#business-inquiries">Business Inquiries</a></li>
-                                <li><a href="#career">Career</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+                <Navigation />
             </header>
 
             {/* Main Content */}
@@ -151,22 +113,22 @@ export default function SocialsPage() {
 
                         {/* Live Streams Section */}
                         <div className="social-section" id="live-streams">
-                            <h2>Live Streams</h2>
+                            <h2>Media & Content</h2>
                             <div className="stream-schedule">
                                 <div className="social-card">
                                     <i className="fab fa-twitch fa-2x"></i>
                                     <div className="schedule-info">
-                                        <h3>Weekly PTCG Battles</h3>
-                                        <p>Every Wednesday @ 8PM MYT</p>
-                                        <a href="#" className="social-button">Watch on Twitch</a>
+                                        <h3>Weekly Deck Building/Playtest Sessions</h3>
+                                        <p>Time Schedule Coming Soon</p>
+                                        <a href="#" className="social-button">Stay Tuned</a>
                                     </div>
                                 </div>
                                 <div className="social-card">
                                     <i className="fab fa-youtube fa-2x"></i>
                                     <div className="schedule-info">
-                                        <h3>Deck Building Sessions</h3>
-                                        <p>Every Saturday @ 3PM MYT</p>
-                                        <a href="#" className="social-button">Watch on YouTube</a>
+                                        <h3>Team's Vlogs</h3>
+                                        <p>Comming Soon</p>
+                                        <a href="#" className="social-button">Coming Soon</a>
                                     </div>
                                 </div>
                             </div>
@@ -179,16 +141,16 @@ export default function SocialsPage() {
                                 <div className="social-card">
                                     <i className="fas fa-users fa-2x"></i>
                                     <h3>Monthly Meetups</h3>
-                                    <p>Join us for casual play sessions and trading events.</p>
+                                    <p>Casual play sessions and team members monthly gatherings.</p>
                                 </div>
                                 <div className="social-card">
                                     <i className="fas fa-chalkboard-teacher fa-2x"></i>
                                     <h3>Training Sessions</h3>
-                                    <p>Weekly online coaching sessions for community members.</p>
+                                    <p>Weekly in-shop coaching/playtest sessions for community members.</p>
                                 </div>
                                 <div className="social-card">
                                     <i className="fas fa-trophy fa-2x"></i>
-                                    <h3>Online Tournaments</h3>
+                                    <h3>Shop/Team Matches</h3>
                                     <p>Regular community tournaments with prizes.</p>
                                 </div>
                             </div>

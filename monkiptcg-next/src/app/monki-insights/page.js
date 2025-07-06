@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import '../../styles/MonkiInsights.css';
 import Footer from '../../components/Footer';
+import Navigation from '../../components/Navigation';
 // TODO: Install and configure firebase
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
@@ -31,6 +32,69 @@ const firebaseConfig = {
 export default function MonkiInsightsPage() {
     const [user, setUser] = useState(null);
     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+    const [isArticleModalOpen, setIsArticleModalOpen] = useState(false);
+    const [selectedArticle, setSelectedArticle] = useState(null);
+    const [filteredArticles, setFilteredArticles] = useState([]);
+    const [filters, setFilters] = useState({
+        type: 'all',
+        author: 'all',
+        sort: 'newest'
+    });
+
+    // Articles data
+    const articlesData = [
+        {
+            id: 101,
+            title: "Card Mania 2025 Champion [Gardevoir Ex] Post-Tournament Report & Deck Guide",
+            author: "Tommy Leong",
+            authorAvatar: "/images/team/players/player3.jpg",
+            date: "2025-04-15",
+            type: "free",
+            excerpt: "This article will introduce Tommy Leong's deep thoughts on Gardevoir ex",
+            thumbnail: "/images/monkiinsights/101page1.jpg",
+            wordpressLink: "https://tommylcf0613.wordpress.com/",
+            content: [
+                {
+                    type: "title",
+                    text: "Catalog"
+                },
+                {
+                    type: "paragraph",
+                    text: "1.Prologue\n2.Preparation Stage\n3.Deck List\n4.Game Plan\n5.Tournament Rundown\n6.Matchups Highlights\n7.Current Meta (SV10 Destined Rivals)\n8.Future Meta\n9.Conclusion"
+                },
+                {
+                    type: "title",
+                    text: "Prologue"
+                },
+                {
+                    type: "paragraph",
+                    text: "Greetings to all, this is Tommy Leong, from Team Monki. After winning the Card Mania 2025 Tournament, the largest non-official PTCG event in Malaysia (256 players), I decided to make this post not only to express my deep appreciation, but also to share more on the tournament run-through, some personal thoughts, a guide and the future direction on my beloved Gardevoir ex deck. Most importantly, I hope this post helps and motivate new players, bringing more Gardevoir lovers into our meta."
+                },
+                {
+                    type: "paragraph",
+                    text: "Who am I?\nI have been a die-hard Gardevoir player since the Paldean Fates format, the deck has brought me to some decent results:\n\n1. Pokemon Championships 2023-2024 Malaysia – Top 32\n2. TCGKL PTCG Championship 2024 Malaysia – Champion\n3. Premier Ball League 2024-2025 Malaysia – Top 8\n4. TCGKL Card Mania 2025 Malaysia – Champion"
+                },
+                {
+                    type: "paragraph",
+                    text: "Follow me on Instagram: <a href='https://www.instagram.com/tommy._.lcf?igsh=MWhwdnNtMjk3ZHI3dQ==' target='_blank' data-social-link'>@tommy._.lcf</a>"
+                },
+                {
+                    type: "title",
+                    text: "Preparation stage:"
+                },
+                {
+                    type: "paragraph",
+                    text: "During the preparation for Card Mania 2025, I had three decks in mind: Gardevoir, pure Dragapult, and Joltik Box. Joltik Box was the first deck I dropped after testing, mainly due to its poor matchup against Raging Bolt. Although pure Dragapult has a great matchup spread and performs well into Charizard (Malaysia’s meta favourite deck), I wasn’t confident playing it in a limited 25-minute Swiss round. If I were to play Dragapult, I’d rather go with the Maractus Lock version instead. After some the meta-analysis, chats with pros and discussion with teammates. I decided to stick with Gardevoir ex as my competitive deck, for these solid reasons:\n..."
+                },
+                
+            ]
+        }
+    ];
+
+    // Initialize filtered articles
+    useEffect(() => {
+        setFilteredArticles(articlesData);
+    }, []);
 
     // useEffect(() => {
     //     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -43,6 +107,64 @@ export default function MonkiInsightsPage() {
     //     return () => unsubscribe();
     // }, []);
 
+    // Filter articles based on selected criteria
+    const applyFilters = () => {
+        let filtered = [...articlesData];
+
+        // Filter by type
+        if (filters.type !== 'all') {
+            filtered = filtered.filter(article => article.type === filters.type);
+        }
+
+        // Filter by author
+        if (filters.author !== 'all') {
+            const authorMap = {
+                'tommy': 'Tommy Leong'
+            };
+            filtered = filtered.filter(article => article.author === authorMap[filters.author]);
+        }
+
+        // Sort articles
+        filtered.sort((a, b) => {
+            switch (filters.sort) {
+                case 'newest':
+                    return new Date(b.date) - new Date(a.date);
+                case 'oldest':
+                    return new Date(a.date) - new Date(b.date);
+                case 'popular':
+                    // For now, sort by date as popularity data is not available
+                    return new Date(b.date) - new Date(a.date);
+                default:
+                    return 0;
+            }
+        });
+
+        setFilteredArticles(filtered);
+    };
+
+    // Handle filter changes
+    const handleFilterChange = (filterType, value) => {
+        setFilters(prev => ({
+            ...prev,
+            [filterType]: value
+        }));
+    };
+
+    // Open article modal
+    const openArticleModal = (article) => {
+        setSelectedArticle(article);
+        setIsArticleModalOpen(true);
+        document.body.style.overflow = 'hidden';
+    };
+
+    // Close article modal
+    const closeArticleModal = () => {
+        setIsArticleModalOpen(false);
+        setSelectedArticle(null);
+        document.body.style.overflow = 'unset';
+    };
+
+    // Handle login (commented out as requested)
     const handleLogin = async (email, password) => {
         // try {
         //     await signInWithEmailAndPassword(auth, email, password);
@@ -78,277 +200,227 @@ export default function MonkiInsightsPage() {
         <>
             {/* Header Section */}
             <header>
-                <nav className="navbar">
-                    <div className="logo">
-                        <img src="/images/logo.png" alt="Team Monki Logo" />
-                    </div>
-                    <ul className="nav-links">
-                        <li><Link href="/">Home</Link></li>
-                        <li className="dropdown">
-                            <a href="#about">About</a>
-                            <ul className="dropdown-content">
-                                <li><Link href="/about-us">About Us</Link></li>
-                                <li><Link href="/socials">Socials</Link></li>
-                                <li><Link href="/news">News</Link></li>
-                                <li><Link href="/partners">Partners</Link></li>
-                            </ul>
-                        </li>
-                        <li className="dropdown">
-                            <a href="#team">Team</a>
-                            <ul className="dropdown-content">
-                                <li><Link href="/team-members">Team Members</Link></li>
-                            </ul>
-                        </li>
-                        <li><Link href="/journey">Journey</Link></li>
-                        <li className="dropdown">
-                            <a href="#community">Community</a>
-                            <ul className="dropdown-content">
-                                <li><Link href="/monki-insights">Monki Insights</Link></li>
-                            </ul>
-                        </li>
-                        <li className="dropdown">
-                            <a href="#contact">Contact</a>
-                            <ul className="dropdown-content">
-                                <li><a href="#contact-us">Contact Us</a></li>
-                                <li><a href="#social-media">Social Media</a></li>
-                                <li><a href="#support-help">Support/Help</a></li>
-                                <li><a href="#business-inquiries">Business Inquiries</a></li>
-                                <li><a href="#career">Career</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    {/* User Login Button */}
-                    <div className="user-auth">
-                        {!user ? (
-                            <button id="loginBtn" className="login-btn" onClick={() => setLoginModalOpen(true)}>
-                                <i className="fas fa-user"></i> 登录
-                            </button>
-                        ) : (
-                            <div className="user-profile">
-                                <img src={user.photoURL || 'https://via.placeholder.com/40'} alt="User Profile" className="user-avatar" />
-                                <span className="user-name">{user.displayName || user.email}</span>
-                                <div className="user-dropdown">
-                                    <ul>
-                                        <li><a href="#profile">个人资料</a></li>
-                                        <li><a href="#purchases">已购文章</a></li>
-                                        <li><a href="#settings">设置</a></li>
-                                        <li><a href="#logout" onClick={handleLogout}>退出登录</a></li>
-                                    </ul>
-                                </div>
+                <Navigation />
+                {/* User Login Button - Hidden as requested */}
+                <div className="user-auth" style={{ display: 'none' }}>
+                    {!user ? (
+                        <button id="loginBtn" className="login-btn" onClick={() => setLoginModalOpen(true)}>
+                            <i className="fas fa-user"></i> Login
+                        </button>
+                    ) : (
+                        <div className="user-profile">
+                            <img src={user.photoURL || 'https://via.placeholder.com/40'} alt="User Profile" className="user-avatar" />
+                            <span className="user-name">{user.displayName || user.email}</span>
+                            <div className="user-dropdown">
+                                <ul>
+                                    <li><a href="#profile">Profile</a></li>
+                                    <li><a href="#purchases">Purchased Articles</a></li>
+                                    <li><a href="#settings">Settings</a></li>
+                                    <li><a href="#logout" onClick={handleLogout}>Logout</a></li>
+                                </ul>
                             </div>
-                        )}
-                    </div>
-                </nav>
+                        </div>
+                    )}
+                </div>
             </header>
 
-            {/* Hero Section */}
-            <section className="hero-section" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/hero-bg.jpg')" }}>
-                <div className="hero-content">
-                    <h1>MONKI INSIGHTS</h1>
-                    <p className="hero-subtitle">战队成员的专业见解与卡组分享</p>
+            <div className="monki-insights-page">
+                {/* Hero Section */}
+                <section className="hero-section" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/hero-bg.jpg')" }}>
+                    <div className="hero-content">
+                        <h1>MONKI INSIGHTS</h1>
+                        <p className="hero-subtitle">Professional insights and deck sharing from team members</p>
+                    </div>
+                </section>
+
+                {/* Main Content */}
+                <div className="container">
+                    <main className="main-content">
+                        {/* Filter Section */}
+                        <section className="filter-section">
+                            <div className="filter-container">
+                                <div className="filter-group">
+                                    <label htmlFor="filter-type">Article Type</label>
+                                    <select 
+                                        id="filter-type" 
+                                        value={filters.type}
+                                        onChange={(e) => handleFilterChange('type', e.target.value)}
+                                    >
+                                        <option value="all">All</option>
+                                        <option value="free">Free</option>
+                                        <option value="paid">Paid</option>
+                                    </select>
+                                </div>
+                                <div className="filter-group">
+                                    <label htmlFor="filter-author">Author</label>
+                                    <select 
+                                        id="filter-author"
+                                        value={filters.author}
+                                        onChange={(e) => handleFilterChange('author', e.target.value)}
+                                    >
+                                        <option value="all">All</option>
+                                        <option value="terry">Terry Chan</option>
+                                        <option value="justin">Justin Wong</option>
+                                        <option value="waikit">Yiam Wai Kit</option>
+                                        <option value="tommy">Tommy Leong</option>
+                                    </select>
+                                </div>
+                                <div className="filter-group">
+                                    <label htmlFor="filter-sort">Sort By</label>
+                                    <select 
+                                        id="filter-sort"
+                                        value={filters.sort}
+                                        onChange={(e) => handleFilterChange('sort', e.target.value)}
+                                    >
+                                        <option value="newest">Newest First</option>
+                                        <option value="oldest">Oldest First</option>
+                                        <option value="popular">Most Popular</option>
+                                    </select>
+                                </div>
+                                <button className="filter-button" onClick={applyFilters}>Apply Filters</button>
+                            </div>
+                        </section>
+
+                        {/* Articles Grid */}
+                        <section className="articles-section">
+                            <div className="articles-grid">
+                                {filteredArticles.length > 0 ? (
+                                    filteredArticles.map((article) => (
+                                        <div key={article.id} className="article-card">
+                                            <div className="article-thumbnail">
+                                                <Image src={article.thumbnail} alt="Article thumbnail" width={300} height={200} />
+                                            </div>
+                                            <div className="article-info">
+                                                <div className="article-meta">
+                                                    <span className="article-date">{article.date}</span>
+                                                    <span className="article-author">
+                                                        <Image src={article.authorAvatar} alt={article.author} className="author-avatar" width={24} height={24} />
+                                                        {article.author}
+                                                    </span>
+                                                </div>
+                                                <h3 className="article-title">{article.title}</h3>
+                                                <p className="article-excerpt">{article.excerpt}</p>
+                                                <div className="article-actions">
+                                                    <button 
+                                                        onClick={() => openArticleModal(article)} 
+                                                        className="read-button"
+                                                    >
+                                                        Read Article
+                                                    </button>
+                                                    <div className={`article-price ${article.type}`}>
+                                                        {article.type === 'free' ? 'Free' : 'Paid'}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <div className="no-results">
+                                        <div className="no-results-icon">
+                                            <i className="fas fa-search"></i>
+                                        </div>
+                                        <h3>No articles found</h3>
+                                        <p>Try adjusting your filters or browse all articles</p>
+                                        <button 
+                                            className="reset-filters-btn"
+                                            onClick={() => {
+                                                setFilters({
+                                                    type: 'all',
+                                                    author: 'all',
+                                                    sort: 'newest'
+                                                });
+                                                setFilteredArticles(articlesData);
+                                            }}
+                                        >
+                                            Reset Filters
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        </section>
+                    </main>
                 </div>
-            </section>
-
-            {/* Main Content */}
-            <div className="container">
-                <main className="main-content">
-                    {/* Filter Section */}
-                    <section className="filter-section">
-                        <div className="filter-container">
-                            <div className="filter-group">
-                                <label htmlFor="filter-type">文章类型</label>
-                                <select id="filter-type">
-                                    <option value="all">全部</option>
-                                    <option value="free">免费</option>
-                                    <option value="paid">付费</option>
-                                </select>
-                            </div>
-                            <div className="filter-group">
-                                <label htmlFor="filter-author">作者</label>
-                                <select id="filter-author">
-                                    <option value="all">全部</option>
-                                    <option value="terry">Terry Chan</option>
-                                    <option value="justin">Justin Wong</option>
-                                    <option value="waikit">Yiam Wai Kit</option>
-                                    <option value="tommy">Tommy Leong</option>
-                                </select>
-                            </div>
-                            <div className="filter-group">
-                                <label htmlFor="filter-sort">排序方式</label>
-                                <select id="filter-sort">
-                                    <option value="newest">最新发布</option>
-                                    <option value="oldest">最早发布</option>
-                                    <option value="popular">最受欢迎</option>
-                                </select>
-                            </div>
-                            <button className="filter-button">应用筛选</button>
-                        </div>
-                    </section>
-
-                    {/* Articles Grid */}
-                    <section className="articles-section">
-                        <div className="articles-grid">
-                            {/* Article 1 */}
-                            <div className="article-card">
-                                <div className="article-thumbnail">
-                                    <Image src="https://via.placeholder.com/300x200" alt="文章缩略图" width={300} height={200} />
-                                    <div className="article-price free">免费</div>
-                                </div>
-                                <div className="article-info">
-                                    <div className="article-meta">
-                                        <span className="article-date">2025-04-15</span>
-                                        <span className="article-author">
-                                            <Image src="/images/team/leadership/captain.jpg" alt="Terry Chan" className="author-avatar" width={24} height={24} />
-                                            Terry Chan
-                                        </span>
-                                    </div>
-                                    <h3 className="article-title">初学者指南：了解当前PTCG标准赛制环境</h3>
-                                    <p className="article-excerpt">本文将为新手玩家介绍当前PTCG标准赛制的基本环境，包括主流卡组类型和基础战术...</p>
-                                    <a href="article1.html" className="read-button">阅读文章</a>
-                                </div>
-                            </div>
-
-                            {/* Article 2 */}
-                            <div className="article-card">
-                                <div className="article-thumbnail">
-                                    <Image src="https://via.placeholder.com/300x200" alt="文章缩略图" width={300} height={200} />
-                                    <div className="article-price paid">¥15</div>
-                                </div>
-                                <div className="article-info">
-                                    <div className="article-meta">
-                                        <span className="article-date">2025-04-10</span>
-                                        <span className="article-author">
-                                            <Image src="/images/team/players/player1.jpg" alt="Justin Wong" className="author-avatar" width={24} height={24} />
-                                            Justin Wong
-                                        </span>
-                                    </div>
-                                    <h3 className="article-title">Lost Box卡组详解：构筑思路与对局策略</h3>
-                                    <p className="article-excerpt">深入分析Lost Box卡组的构筑思路、核心卡牌选择以及面对不同对手的策略调整...</p>
-                                    <a href="article-2.html" className="read-button">阅读文章</a>
-                                </div>
-                            </div>
-
-                            {/* Article 3 */}
-                            <div className="article-card">
-                                <div className="article-thumbnail">
-                                    <Image src="https://via.placeholder.com/300x200" alt="文章缩略图" width={300} height={200} />
-                                    <div className="article-price paid">¥20</div>
-                                </div>
-                                <div className="article-info">
-                                    <div className="article-meta">
-                                        <span className="article-date">2025-04-05</span>
-                                        <span className="article-author">
-                                            <Image src="/images/team/players/player2.jpg" alt="Yiam Wai Kit" className="author-avatar" width={24} height={24} />
-                                            Yiam Wai Kit
-                                        </span>
-                                    </div>
-                                    <h3 className="article-title">Mew VMAX进阶技巧：如何应对当前环境中的克制卡组</h3>
-                                    <p className="article-excerpt">本文分享Mew VMAX卡组在面对不利对局时的技巧与策略，帮助玩家提升胜率...</p>
-                                    <a href="article-3.html" className="read-button">阅读文章</a>
-                                </div>
-                            </div>
-
-                            {/* Article 4 */}
-                            <div className="article-card">
-                                <div className="article-thumbnail">
-                                    <Image src="https://via.placeholder.com/300x200" alt="文章缩略图" width={300} height={200} />
-                                    <div className="article-price free">免费</div>
-                                </div>
-                                <div className="article-info">
-                                    <div className="article-meta">
-                                        <span className="article-date">2025-03-28</span>
-                                        <span className="article-author">
-                                            <Image src="/images/team/players/player3.jpg" alt="Tommy Leong" className="author-avatar" width={24} height={24} />
-                                            Tommy Leong
-                                        </span>
-                                    </div>
-                                    <h3 className="article-title">比赛准备指南：如何高效备战PTCG锦标赛</h3>
-                                    <p className="article-excerpt">从卡组选择到心理准备，全方位指导玩家如何为即将到来的PTCG锦标赛做好准备...</p>
-                                    <a href="article-4.html" className="read-button">阅读文章</a>
-                                </div>
-                            </div>
-
-                            {/* Article 5 */}
-                            <div className="article-card">
-                                <div className="article-thumbnail">
-                                    <Image src="https://via.placeholder.com/300x200" alt="文章缩略图" width={300} height={200} />
-                                    <div className="article-price paid">¥25</div>
-                                </div>
-                                <div className="article-info">
-                                    <div className="article-meta">
-                                        <span className="article-date">2025-03-20</span>
-                                        <span className="article-author">
-                                            <Image src="/images/team/leadership/captain.jpg" alt="Terry Chan" className="author-avatar" width={24} height={24} />
-                                            Terry Chan
-                                        </span>
-                                    </div>
-                                    <h3 className="article-title">冠军卡组分析：2025年马来西亚地区赛冠军卡组详解</h3>
-                                    <p className="article-excerpt">独家分析2025年马来西亚地区赛冠军使用的卡组构筑思路、核心战术和关键对局回顾...</p>
-                                    <a href="article-5.html" className="read-button">阅读文章</a>
-                                </div>
-                            </div>
-
-                            {/* Article 6 */}
-                            <div className="article-card">
-                                <div className="article-thumbnail">
-                                    <Image src="https://via.placeholder.com/300x200" alt="文章缩略图" width={300} height={200} />
-                                    <div className="article-price paid">¥18</div>
-                                </div>
-                                <div className="article-info">
-                                    <div className="article-meta">
-                                        <span className="article-date">2025-03-15</span>
-                                        <span className="article-author">
-                                            <Image src="/images/team/players/player4.jpg" alt="Eden Lee" className="author-avatar" width={24} height={24} />
-                                            Eden Lee
-                                        </span>
-                                    </div>
-                                    <h3 className="article-title">Gardevoir ex卡组构筑指南：核心卡牌选择与替换方案</h3>
-                                    <p className="article-excerpt">详细解析Gardevoir ex卡组的构筑思路，包括核心卡牌选择、能量配比以及针对不同环境的替换方案...</p>
-                                    <a href="article-6.html" className="read-button">阅读文章</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Pagination */}
-                        <div className="pagination">
-                            <button className="page-btn active">1</button>
-                            <button className="page-btn">2</button>
-                            <button className="page-btn">3</button>
-                            <button className="page-btn next">
-                                <i className="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </section>
-                </main>
             </div>
+
+            {/* Article Modal */}
+            {isArticleModalOpen && selectedArticle && (
+                <div className="article-modal-overlay" onClick={closeArticleModal}>
+                    <div className="article-modal" onClick={(e) => e.stopPropagation()}>
+                        <button className="article-modal-close" onClick={closeArticleModal}>
+                            ×
+                        </button>
+                        <div className="article-modal-content">
+                            <div className="article-modal-body">
+                                {/* Article Header */}
+                                <div className="article-modal-header">
+                                    <h1>{selectedArticle.title}</h1>
+                                    <div className="article-modal-meta">
+                                        <span className="article-modal-date">{selectedArticle.date}</span>
+                                        <span className="article-modal-author">
+                                            <Image src={selectedArticle.authorAvatar} alt={selectedArticle.author} width={32} height={32} />
+                                            {selectedArticle.author}
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                {/* Article Content */}
+                                <div className="article-modal-content-body">
+                                    {selectedArticle.content.map((item, index) => (
+                                        <div key={index} className={`article-modal-${item.type}`}>
+                                            {item.type === 'paragraph' && (
+                                                <p dangerouslySetInnerHTML={{ __html: item.text }}></p>
+                                            )}
+                                            {item.type === 'title' && (
+                                                <h2 className="article-modal-subtitle">{item.text}</h2>
+                                            )}
+                                        </div>
+                                    ))}
+                                    
+                                    {/* Keep Reading Button */}
+                                    <div className="keep-reading-section">
+                                        <a 
+                                            href={selectedArticle.wordpressLink} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="keep-reading-button"
+                                        >
+                                            Keep Reading
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Footer */}
             <Footer />
 
-            {/* Login Modal */}
+            {/* Login Modal - Hidden as requested */}
             {isLoginModalOpen && (
                 <div id="loginModal" className="login-modal active">
                     <div className="modal-content">
                         <span className="close-modal" onClick={() => setLoginModalOpen(false)}>&times;</span>
-                        <h2>登录</h2>
+                        <h2>Login</h2>
                         <form className="login-form" onSubmit={(e) => {
                             e.preventDefault();
                             handleLogin(e.target.email.value, e.target.password.value);
                         }}>
                             <div className="form-group">
-                                <label htmlFor="email">邮箱</label>
+                                <label htmlFor="email">Email</label>
                                 <input type="email" id="email" name="email" required />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="password">密码</label>
+                                <label htmlFor="password">Password</label>
                                 <input type="password" id="password" name="password" required />
                             </div>
-                            <button type="submit" className="btn-primary">登录</button>
+                            <button type="submit" className="btn-primary">Login</button>
                         </form>
                         <div className="social-login">
-                            <p>或使用以下方式登录</p>
+                            <p>Or login with</p>
                             <button className="google-login" onClick={handleGoogleLogin}>
-                                <i className="fab fa-google"></i> 使用 Google 登录
+                                <i className="fab fa-google"></i> Login with Google
                             </button>
                         </div>
                     </div>

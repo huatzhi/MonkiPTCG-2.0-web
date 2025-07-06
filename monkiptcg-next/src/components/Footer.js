@@ -19,10 +19,9 @@ export default function Footer() {
                 <div className="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><Link href="/">Home</Link></li>
-                        <li><Link href="/about-us">About</Link></li>
-                        <li><Link href="/team-members">Team</Link></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><Link href="/news">News</Link></li>
+                        <li><Link href="/monki-insights">Monki Insights</Link></li>
+                        <li><Link href="/contact">Contact</Link></li>
                     </ul>
                 </div>
             </div>

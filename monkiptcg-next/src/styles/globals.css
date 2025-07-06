@@ -50,13 +50,37 @@ header.scrolled {
     position: relative;
 }
 
-.logo {
+.logo-container {
     position: absolute;
     left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     height: 100px;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+}
+
+.partner-logo img {
+    height: 60px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo img:hover {
+    opacity: 1;
 }
 
 .nav-links {
@@ -150,7 +174,7 @@ header.scrolled {
 footer {
     background-color: #1a1a1a;
     color: #fff;
-    padding: 3rem 0 1rem;
+    padding: 2rem 0 1rem;
     margin-top: 2rem;
 }
 
@@ -186,7 +210,7 @@ footer {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .footer-section a {
@@ -201,7 +225,7 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }

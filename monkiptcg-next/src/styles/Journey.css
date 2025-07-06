@@ -33,13 +33,38 @@ header.scrolled {
     position: relative;
 }
 
-.logo {
+/* Logo Container Styles - 确保与globals.css一致 */
+.logo-container {
     position: absolute;
     left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     height: 100px;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+}
+
+.partner-logo img {
+    height: 60px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo img:hover {
+    opacity: 1;
 }
 
 .nav-links {
@@ -109,8 +134,8 @@ header.scrolled {
     color: #10e07f;
 }
 
-/* Hero Section */
-.hero-section {
+/* Hero Section - Journey specific */
+.journey-page .hero-section {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -122,7 +147,7 @@ header.scrolled {
     position: relative;
 }
 
-.hero-content {
+.journey-page .hero-content {
     position: relative;
     z-index: 1;
     display: flex;
@@ -134,7 +159,7 @@ header.scrolled {
     animation-delay: 0.3s;
 }
 
-.hero-content h1 {
+.journey-page .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 0;
     background: linear-gradient(45deg, #00ff00, #7e1785);
@@ -146,7 +171,7 @@ header.scrolled {
     animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
-.hero-content h1::before {
+.journey-page .hero-content h1::before {
     content: '';
     position: absolute;
     top: -20px;
@@ -160,16 +185,7 @@ header.scrolled {
     border-radius: 10px;
 }
 
-@keyframes titleGlow {
-    0% {
-        filter: brightness(1);
-    }
-    100% {
-        filter: brightness(1.2);
-    }
-}
-
-.hero-subtitle {
+.journey-page .hero-subtitle {
     font-size: 1.5rem;
     color: #fff;
     margin: 0;
@@ -303,9 +319,10 @@ header.scrolled {
     box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
 }
 
-.timeline-image img:hover {
+/* 移除图片悬停放大效果 */
+/* .timeline-image img:hover {
     transform: scale(1.05);
-}
+} */
 
 /* Footer Styles */
 footer {
@@ -347,7 +364,7 @@ footer {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .footer-section a {
@@ -459,6 +476,18 @@ footer {
 }
 /* 确保动画在滚动时触发 */
 .timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* To Be Continued Component Styles */
+.to-be-continued {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.to-be-continued.visible {
     opacity: 1;
     transform: translateY(0);
 }

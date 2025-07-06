@@ -5,6 +5,7 @@ import '../styles/styles.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
 
 export default function HomePage() {
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -72,46 +73,7 @@ export default function HomePage() {
     <>
       {/* Header Section */}
       <header style={{ backgroundColor: headerScrolled ? 'rgba(26, 26, 26, 0.95)' : '#1a1a1a' }}>
-        <nav className="navbar">
-          <div className="logo">
-            <img src="/images/logo.png" alt="Team Monki Logo" />
-          </div>
-          <ul className="nav-links">
-            <li><Link href="/">Home</Link></li>
-            <li className="dropdown">
-              <a href="#about">About</a>
-              <ul className="dropdown-content">
-                <li><a href="/about-us">About Us</a></li>
-                <li><a href="/socials">Socials</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/partners">Partners</a></li>
-              </ul>
-            </li>
-            <li className="dropdown">
-              <a href="#team">Team</a>
-              <ul className="dropdown-content">
-                <li><a href="/team-members">Team Members</a></li>
-              </ul>
-            </li>
-            <li><a href="/journey">Journey</a></li>
-            <li className="dropdown">
-              <a href="#community">Community</a>
-              <ul className="dropdown-content">
-                <li><a href="/monki-insights">Monki Insights</a></li>
-              </ul>
-            </li>
-            <li className="dropdown">
-              <a href="#contact">Contact</a>
-              <ul className="dropdown-content">
-                <li><a href="#contact-us">Contact Us</a></li>
-                <li><a href="#social-media">Social Media</a></li>
-                <li><a href="#support-help">Support/Help</a></li>
-                <li><a href="#business-inquiries">Business Inquiries</a></li>
-                <li><a href="#career">Career</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+        <Navigation />
       </header>
 
       {/* Main Content */}

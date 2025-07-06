@@ -41,13 +41,38 @@ header.scrolled {
     position: relative;
 }
 
-.logo {
+/* Logo Container Styles - 确保与globals.css一致 */
+.logo-container {
     position: absolute;
     left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     height: 100px;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+}
+
+.partner-logo img {
+    height: 60px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo img:hover {
+    opacity: 1;
 }
 
 .nav-links {
@@ -183,6 +208,14 @@ header.scrolled {
     font-weight: 600;
 }
 
+/* 控制Become a Partner板块中文字和按钮的距离 */
+.partners-section p {
+    color: #aaa;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 /* Sponsor Content */
 .sponsor-content {
     display: flex;
@@ -283,7 +316,7 @@ footer {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .footer-section a {

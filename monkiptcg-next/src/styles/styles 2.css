@@ -1,0 +1,313 @@
+/* Home Page Specific Styles */
+
+/* Home Page Main Content Layout */
+.main-content {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+/* Video Container Styles */
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background: #000;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+.video-container.visible {
+    opacity: 1;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    transition: opacity 1s ease-in-out;
+}
+
+.video-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.video-content > * {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.video-content > *.visible {
+    opacity: 1;
+}
+
+/* Cyberpunk Text Styles */
+.cyberpunk-title {
+    font-size: 6rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(126, 23, 133, 0.8),
+                 0 0 20px rgba(126, 23, 133, 0.6),
+                 0 0 30px rgba(126, 23, 133, 0.4);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.cyberpunk-subtitle {
+    font-size: 1.5rem;
+    color: #10e07f;
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    text-shadow: 0 0 5px rgba(16, 224, 127, 0.8);
+}
+
+.cyberpunk-line {
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #7e1785, #10e07f, transparent);
+    margin: 2rem auto;
+    position: relative;
+}
+
+.cyberpunk-line::before,
+.cyberpunk-line::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #10e07f;
+    border-radius: 50%;
+    top: -4px;
+}
+
+.cyberpunk-line::before {
+    left: 0;
+}
+
+.cyberpunk-line::after {
+    right: 0;
+}
+
+.cyberpunk-description {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Home Section Styles */
+.home-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 2rem 0;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home-section h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.home-section p {
+    color: #ddd;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Team Logo */
+.team-logo {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.team-logo.visible {
+    opacity: 1;
+}
+
+/* Loading Styles */
+.loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 4;
+    color: #fff;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #10e07f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+.loading-indicator p {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-progress {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin: 1rem auto;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #10e07f, #7e1785);
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+}
+
+.video-container.visible .loading-progress {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(126, 23, 133, 0.8),
+                     0 0 20px rgba(126, 23, 133, 0.6),
+                     0 0 30px rgba(126, 23, 133, 0.4);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(126, 23, 133, 1),
+                     0 0 30px rgba(126, 23, 133, 0.8),
+                     0 0 40px rgba(126, 23, 133, 0.6);
+    }
+}
+
+/* Home Page Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 0 1rem;
+    }
+    
+    .cyberpunk-title {
+        font-size: 3rem;
+        letter-spacing: 0.3rem;
+    }
+    
+    .cyberpunk-subtitle {
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+    }
+    
+    .cyberpunk-description {
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+    }
+    
+    .home-section {
+        padding: 2rem 1rem;
+        margin: 1rem 0;
+    }
+    
+    .home-section h2 {
+        font-size: 2rem;
+    }
+    
+    .home-section p {
+        font-size: 1rem;
+    }
+    
+    .team-logo {
+        max-width: 200px;
+    }
+} 

@@ -41,13 +41,38 @@ header.scrolled {
     position: relative;
 }
 
-.logo {
+/* Logo Container Styles - 确保与globals.css一致 */
+.logo-container {
     position: absolute;
     left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     height: 100px;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+}
+
+.partner-logo img {
+    height: 60px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo img:hover {
+    opacity: 1;
 }
 
 .nav-links {
@@ -227,6 +252,7 @@ header.scrolled {
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s ease;
+    margin-top: 1rem;
 }
 
 .social-button:hover {
@@ -445,7 +471,20 @@ footer {
     gap: 2rem;
 }
 
-.schedule-info {
+/* Media & Content 卡片特殊布局 */
+.stream-schedule .social-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    min-height: 200px;
+}
+
+.stream-schedule .social-card .schedule-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     text-align: center;
 }
 
@@ -453,11 +492,19 @@ footer {
     color: #fff;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .schedule-info p {
     color: #aaa;
     margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+/* 确保按钮固定在底部 */
+.stream-schedule .social-card .social-button {
+    margin-top: auto;
+    align-self: center;
 }
 
 /* Engagement Content Styles */
@@ -467,42 +514,7 @@ footer {
     gap: 2rem;
 }
 
-/* Social Button Styles */
-.social-button {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background: rgba(0, 255, 0, 0.1);
-    color: #00ff00;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-}
 
-.social-button:hover {
-    background: rgba(0, 255, 0, 0.2);
-    color: #fff;
-}
-
-.social-button.instagram {
-    background: rgba(225, 48, 108, 0.1);
-    color: #e1306c;
-}
-
-.social-button.instagram:hover {
-    background: rgba(225, 48, 108, 0.2);
-    color: #fff;
-}
-
-.social-button.facebook {
-    background: rgba(66, 103, 178, 0.1);
-    color: #4267b2;
-}
-
-.social-button.facebook:hover {
-    background: rgba(66, 103, 178, 0.2);
-    color: #fff;
-}
 
 /* Responsive Design Updates */
 @media (max-width: 1200px) {
