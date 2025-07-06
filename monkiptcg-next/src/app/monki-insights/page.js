@@ -226,7 +226,7 @@ export default function MonkiInsightsPage() {
 
             <div className="monki-insights-page">
                 {/* Hero Section */}
-                <section className="hero-section" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/hero-bg.jpg')" }}>
+                <section className="hero-section" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/monkiinsights/hero-monkiinsights.jpg')" }}>
                     <div className="hero-content">
                         <h1>MONKI INSIGHTS</h1>
                         <p className="hero-subtitle">Professional insights and deck sharing from team members</p>

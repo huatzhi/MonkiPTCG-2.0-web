@@ -23,7 +23,7 @@ export default function AboutUsPage() {
                         {/* About Section */}
                         <div className="about-section">
                             <h2>Our Story</h2>
-                            <img src="/images/hero-bg.jpg" alt="Team Monki Story" className="about-image" />
+                            <img src="/images/about-ourstory.jpg" alt="Team Monki Story" className="about-image" />
                             <p>Team Monki is Malaysia&apos;s premier Pokemon Trading Card Game team, founded with the vision of bringing together the best players in the country. Our journey began in 2020, and since then, we&apos;ve grown into a community of passionate players dedicated to excellence in competitive play.</p>
                         </div>
 

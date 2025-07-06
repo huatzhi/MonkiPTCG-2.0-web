@@ -142,7 +142,7 @@ header.scrolled {
     justify-content: center;
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('/images/journey/hero-bg.jpg') center/cover;
+                url('/images/journey/hero-journey.JPG') center/cover;
     padding-top: 100px;
     position: relative;
 }
