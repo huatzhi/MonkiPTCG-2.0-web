@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import '../styles/globals.css';
 import '../styles/styles.css';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -92,22 +93,94 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Welcome Section */}
+        {/* Content Grid Section */}
         <section className="home-section">
-          <h2>Welcome to Team Monki</h2>
-          <p>Join us on our journey to become the best PTCG team in Malaysia. We are a group of passionate players dedicated to excellence in competitive play.</p>
-        </section>
+          <h2>View</h2>
+          <div className="content-grid">
+            {/* Team Statistics */}
+            <div className="grid-card stats-card">
+              <div className="card-header">
+                <h3>Team Statistics</h3>
+                <i className="fas fa-chart-line"></i>
+              </div>
+              <div className="stats-grid">
+                <div className="stat-item">
+                  <div className="stat-number">20</div>
+                  <div className="stat-label">Team Members</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">1</div>
+                  <div className="stat-label">Articles</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">3</div>
+                  <div className="stat-label">News</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">2024</div>
+                  <div className="stat-label">Founded</div>
+                </div>
+              </div>
+            </div>
 
-        {/* Achievements Section */}
-        <section className="home-section">
-          <h2>Our Achievements</h2>
-          <p>Discover our team&apos;s accomplishments and milestones in the competitive PTCG scene. From local tournaments to international championships.</p>
-        </section>
+            {/* Latest News */}
+            <div className="grid-card news-card">
+              <div className="card-header">
+                <h3>Latest News</h3>
+                <i className="fas fa-newspaper"></i>
+              </div>
+              <div className="news-list">
+                <div className="news-item">
+                  <div className="news-date">2025-04-15</div>
+                  <div className="news-title">Card Mania 2025 Champion</div>
+                  <div className="news-excerpt">Tommy Leong wins the largest non-official PTCG event in Malaysia</div>
+                </div>
+                <div className="news-item">
+                  <div className="news-date">2025-03-28</div>
+                  <div className="news-title">MBL Success Story</div>
+                  <div className="news-excerpt">Nick Kee qualifies for World Championship twice in a row</div>
+                </div>
+              </div>
+              <Link href="/news" className="card-link">
+                View All News <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
 
-        {/* Community Section */}
-        <section className="home-section">
-          <h2>Join Our Community</h2>
-          <p>Be part of our growing PTCG community. Connect with fellow players, share strategies, and participate in our events.</p>
+            {/* Latest Articles */}
+            <div className="grid-card articles-card">
+              <div className="card-header">
+                <h3>Latest Articles</h3>
+                <i className="fas fa-book-open"></i>
+              </div>
+              <div className="article-list">
+                <div className="article-item">
+                  <div className="article-type free">Free</div>
+                  <div className="article-title">Card Mania 2025 Champion [Gardevoir Ex] Post-Tournament Report & Deck Guide</div>
+                  <div className="article-author">by Tommy Leong</div>
+                </div>
+              </div>
+              <Link href="/monki-insights" className="card-link">
+                Read More Articles <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
+
+            {/* Partners */}
+            <div className="grid-card partners-card">
+              <div className="card-header">
+                <h3>Our Partners</h3>
+                <i className="fas fa-handshake"></i>
+              </div>
+              <div className="partners-content">
+                <div className="partner-logo">
+                  <Image src="/images/partners/sponsor.png" alt="Partner Logo" width={120} height={60} />
+                </div>
+                <p>We work with leading brands in the industry to provide the best experience for our players.</p>
+              </div>
+              <Link href="/partners" className="card-link">
+                Learn More <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
+          </div>
         </section>
       </main>
 

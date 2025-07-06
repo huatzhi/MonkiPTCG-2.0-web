@@ -49,6 +49,7 @@ body.team-members-page .hero-section {
     justify-content: center !important;
     position: relative !important;
     margin-bottom: 2rem !important;
+    padding-top: 100px !important; /* 为固定导航栏留出空间 */
 }
 
 /* Override any global hero-content styles */
@@ -382,6 +383,7 @@ body.team-members-page .players .team-row {
     justify-content: center;
     position: relative;
     margin-bottom: 2rem;
+    padding-top: 100px; /* 为固定导航栏留出空间 */
 }
 
 .team-page .hero-section::before {
@@ -772,6 +774,7 @@ body.team-members-page .players .team-member {
     
     .team-page .hero-section {
         height: 30vh;
+        padding-top: 80px; /* 移动端导航栏较矮，减少padding */
     }
     
     .team-page .hero-content h1 {
@@ -786,6 +789,7 @@ body.team-members-page .players .team-member {
 @media (max-width: 480px) {
     .team-page .hero-section {
         height: 25vh;
+        padding-top: 70px; /* 小屏幕导航栏更矮，进一步减少padding */
     }
     
     .team-page .hero-content h1 {

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import '../../styles/globals.css'; // Import global styles first
 import '../../styles/TeamMembers.css'; // Import the team members' specific CSS file
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
@@ -324,16 +325,12 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Professional Achievements</h5>
                           <ul className="achievements-list">
-                            <li>Sponsorship Acquisition</li>
-                            <li>Player Contracts</li>
-                              <li>Team Relations</li>
-                            <li>Partnership Development</li>
-                            <li>Brand Management</li>
+                            <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
                           <h5>Favorite Pokemon</h5>
-                          <div className="favorite-pokemon">Lucario</div>
+                          <div className="favorite-pokemon">Eevee</div>
                               </div>
                               </div>
                     </div>
@@ -371,16 +368,12 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 8</li>
-                              <li>2024 League Cup Champion</li>
-                              <li>2023 Nationals Top 16</li>
-                            <li>2023 League Challenge Winner</li>
-                            <li>2022 Regional Top 4</li>
+                              <li>2025 Penang UBL 2nd place</li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
                           <h5>Favorite Pokemon</h5>
-                          <div className="favorite-pokemon">Greninja</div>
+                          <div className="favorite-pokemon">Snorlax</div>
                               </div>
                       </div>
                     </div>
@@ -412,7 +405,7 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Achievements</h5>
                           <ul className="achievements-list">
-                            <li>Top Metal Types Player in Monki Team</li>
+                            <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
@@ -491,9 +484,9 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 8</li>
-                              <li>2024 League Cup Champion</li>
-                              <li>2023 League Challenge Top 4</li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
@@ -657,9 +650,9 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 8</li>
-                              <li>2024 League Cup Champion</li>
-                              <li>2023 League Challenge Top 4</li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
@@ -696,9 +689,9 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 16</li>
-                              <li>2024 League Challenge Winner</li>
-                              <li>2023 League Cup Top 4</li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
@@ -726,7 +719,7 @@ export default function TeamMembersPage() {
                           <p className="motto">"Every battle is a chance to grow stronger"</p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/karlokzaii?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/karlokzaii0310?igsh=MTNvOWJ0MzN3bnd2OA==" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/karlokzaii0310?igsh=MTNvOWJ0MzN3bnd2OA==" target="_blank" data-social-link><i className="fab fa-instagram"></i>Yanmega</a>
                           </div>
                         </div>
                       </div>
@@ -735,14 +728,14 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 8</li>
-                              <li>2024 League Cup Champion</li>
-                              <li>2023 League Challenge Top 4</li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
                           <h5>Favorite Pokemon</h5>
-                          <div className="favorite-pokemon">Garchomp</div>
+                          <div className="favorite-pokemon"></div>
                               </div>
                       </div>
                     </div>
@@ -774,14 +767,14 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 16</li>
-                              <li>2024 League Challenge Winner</li>
-                              <li>2023 League Cup Top 4</li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
                           <h5>Favorite Pokemon</h5>
-                          <div className="favorite-pokemon">Garchomp</div>
+                          <div className="favorite-pokemon"></div>
                               </div>
                       </div>
                     </div>
@@ -813,9 +806,9 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 8</li>
-                              <li>2024 League Cup Champion</li>
-                              <li>2023 League Challenge Top 4</li>
+                              <li>2024-25 Ultra Ball League Top 4</li>
+                              <li></li>
+                              <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
@@ -840,7 +833,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>10/20</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto">"Actions Produce Informations"</p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/profile.php?id=61551834492236&mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/weicheng136?igsh=ZDNmNjJ6cmgxcGlw&utm_source=qr" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
@@ -852,9 +845,9 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 16</li>
-                              <li>2024 League Challenge Winner</li>
-                              <li>2023 League Cup Top 4</li>
+                              <li>2024 Premier Ball League TOP16</li>
+                              <li></li>
+                              <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
@@ -891,9 +884,9 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 8</li>
-                              <li>2024 League Cup Champion</li>
-                              <li>2023 League Challenge Top 4</li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
@@ -930,9 +923,9 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 16</li>
-                              <li>2024 League Challenge Winner</li>
-                              <li>2023 League Cup Top 4</li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
@@ -969,9 +962,9 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024 Regional Top 16</li>
-                              <li>2024 League Challenge Winner</li>
-                              <li>2023 League Cup Top 4</li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
                         </ul>
                       </div>
                         <div className="favorite-pokemon-section">

@@ -96,7 +96,7 @@ export default function SocialsPage() {
                                 <div className="social-card" data-platform="instagram">
                                     <i className="fab fa-instagram fa-3x"></i>
                                     <h3>Instagram</h3>
-                                    <p>Follow our journey, behind-the-scenes content, and daily updates.</p>
+                                    <p>Follow our official Instagram, let's see what's going on behind-the-scenes and daily updates.</p>
                                     <a href="https://www.instagram.com/teammonki_my?igsh=Z21iOGplZXI0NDcx" className="social-button instagram" target="_blank" rel="noopener noreferrer">Follow</a>
                                     <Gallery platform="instagram" images={instagramImages} />
                                 </div>
@@ -104,7 +104,7 @@ export default function SocialsPage() {
                                 <div className="social-card" data-platform="facebook">
                                     <i className="fab fa-facebook fa-3x"></i>
                                     <h3>Facebook</h3>
-                                    <p>Stay updated with tournament results, event announcements, and community news.</p>
+                                    <p>Stay updated with tournament results, event announcements, team's photosand community news.</p>
                                     <a href="https://www.facebook.com/profile.php?id=61567936103241&mibextid=LQQJ4d" className="social-button facebook" target="_blank" rel="noopener noreferrer">Follow</a>
                                     <Gallery platform="facebook" images={facebookImages} />
                                 </div>

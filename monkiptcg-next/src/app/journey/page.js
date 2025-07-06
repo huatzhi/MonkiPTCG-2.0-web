@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import '../../styles/globals.css';
 import '../../styles/Journey.css';
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
@@ -22,6 +23,21 @@ export default function JourneyPage() {
   };
 
   useEffect(() => {
+    // Force apply logo styles to ensure consistency
+    const logoContainer = document.querySelector('.logo-container');
+    const logoImg = document.querySelector('.logo img');
+    const partnerLogoImg = document.querySelector('.partner-logo img');
+    
+    if (logoContainer && logoImg && partnerLogoImg) {
+      // Force reapply styles
+      logoContainer.style.display = 'flex';
+      logoContainer.style.alignItems = 'center';
+      logoImg.style.height = window.innerWidth <= 768 ? '50px' : '100px';
+      logoImg.style.width = 'auto';
+      partnerLogoImg.style.height = window.innerWidth <= 768 ? '35px' : '60px';
+      partnerLogoImg.style.width = 'auto';
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
