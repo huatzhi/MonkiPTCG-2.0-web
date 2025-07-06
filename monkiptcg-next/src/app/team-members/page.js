@@ -350,7 +350,7 @@ export default function TeamMembersPage() {
                           <img src="/images/team/players/player1.jpg" alt="Player 1" />
                         </div>
                         <div className="member-info">
-                          <h3>Justin Wong</h3>
+                          <h3>JustinWZD</h3>
                           <p className="role">Main Player</p>
                           <div className="birthday">
                               <i className="fas fa-birthday-cake"></i>
@@ -368,8 +368,16 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2025 Penang UBL 2nd place</li>
-                            </ul>
+                            <li>Regional League Malaysia 2023-2024 Vol.2  Master - Top 41  12/02/2023</li>
+                            <li>ERICFUN Championship - Top 3   09/09/2024</li>
+                            <li>GBL 2024-25 Season 1 Malaysia Cardinals Hobby -  Top6  10/19/2024</li>
+                            <li>GBL 2024-25 Season 1 Malaysia Deck Out Den -  Top 2  10/25/2024</li>
+                            <li>UBl 2024-25 Season 1 Malaysia Toysbar - Top 6   11/06/2024</li>
+                            <li>UBl 2024-25 Season 2 Malaysia Toysbar - Top 12  01/08/2025</li>
+                            <li>UBl 2024-25 Season 3 Malaysia Atlas Gamer - Top 11  03/01/2025</li>
+                            <li>UBl 2024-25 Season 3 Malaysia Peneng - Top 2   03/22/2025</li>
+                            <li>Player Ranking 2025 - Top14</li>
+                          </ul>
                               </div>
                         <div className="favorite-pokemon-section">
                           <h5>Favorite Pokemon</h5>
