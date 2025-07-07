@@ -438,7 +438,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>09/22</span>
                             </div>
-                          <p className="motto">"Adapt and overcome every challenge"</p>
+                          <p className="motto">"Stay in the game, your outplay is still ahead"</p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/tommylcff?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/tommy._.lcf?igsh=MWhwdnNtMjk3ZHI3dQ==" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
@@ -736,9 +736,12 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li></li>
-                              <li></li>
-                              <li></li>
+                              <li>TCGKL 2024 TOP 8</li>
+                              <li>3V3 Malaysia 2024 TOP 4</li>
+                              <li>Malaysia 2023 Regional vol 3 TOP 16</li>
+                              <li>Malaysia 2023 Regional vol 2 TOP 8</li>
+                              <li>Taiwan 2022 Town League TOP 16</li>
+                              <li>Taiwan 2021 Regional TOP 16</li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
@@ -853,14 +856,13 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
+                              <li>Team Monki Website Designer</li>
                               <li>2024 Premier Ball League TOP16</li>
-                              <li></li>
-                              <li></li>
-                            </ul>
+                          </ul>
                               </div>
                         <div className="favorite-pokemon-section">
                           <h5>Favorite Pokemon</h5>
-                          <div className="favorite-pokemon">Garchomp</div>
+                          <div className="favorite-pokemon">Pikachu/Treecko</div>
                               </div>
                       </div>
                     </div>
