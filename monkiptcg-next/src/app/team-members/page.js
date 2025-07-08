@@ -313,7 +313,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>05/28</span>
                             </div>
-                          <p className="motto">"Building bridges between talent and opportunity"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/sammy.khoo.89?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/mantao89?igsh=ZHZsZzAya3pucGNx" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
@@ -356,7 +356,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>12/05</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/justin.wong.14811692?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/justin_wong.z.d?igsh=MXQ0bHNzdmk5dHM2cA==" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
@@ -480,10 +480,9 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>11/01</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/chunhou.lee.7?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/edenlch?igsh=cnFvMWxzNXB3YXhs" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
                           </div>
                         </div>
                       </div>
@@ -492,14 +491,12 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li></li>
-                              <li></li>
-                              <li></li>
+                              <li>FC CUP ARENA 2th place</li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
                           <h5>Favorite Pokemon</h5>
-                          <div className="favorite-pokemon">Greninja</div>
+                          <div className="favorite-pokemon">Garchomp/greninja/dragonite</div>
                               </div>
                       </div>
                     </div>
@@ -519,7 +516,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>07/17</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://x.com/nicks717"
                             target="_blank" data-social-link><i className="fab fa-twitter"></i></a>
@@ -560,7 +557,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>11/10</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://x.com/sirupy_yoong"
                             target="_blank" data-social-link><i className="fab fa-twitter"></i></a>
@@ -646,7 +643,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>02/19</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/komori.nero?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/handson0219?igsh=MWI1bzVkaGh4eWZ0dQ==" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
@@ -685,7 +682,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>11/22</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/kitkit.wongwaikit.5?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/waikit1992?igsh=YmJzZXpsOGNvNXd2" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
@@ -724,10 +721,10 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>03/10</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/karlokzaii?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/karlokzaii0310?igsh=MTNvOWJ0MzN3bnd2OA==" target="_blank" data-social-link><i className="fab fa-instagram"></i>Yanmega</a>
+                            <a href="https://www.instagram.com/karlokzaii0310?igsh=MTNvOWJ0MzN3bnd2OA==" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
                           </div>
                         </div>
                       </div>
@@ -766,7 +763,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>11/06</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/weiji?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/i.am.waikiat?igsh=NzUwZjVvZzl6YWZu" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
@@ -805,7 +802,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>04/15</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/carlos.goonting?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/_thegoonster?igsh=MWk5MDJqeWFjcmM0" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
@@ -882,10 +879,9 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>10/10</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
-                            <a href="" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
-                            <a href="" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/nigellyf" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                           </div>
                         </div>
                       </div>
@@ -921,7 +917,7 @@ export default function TeamMembersPage() {
                               <i className="fas fa-birthday-cake"></i>
                             <span>05/28</span>
                             </div>
-                          <p className="motto">"Every battle is a chance to grow stronger"</p>
+                          <p className="motto"></p>
                           <div className="social-links">
                             <a href="https://www.facebook.com/IJNNEKO?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/mezibinlaide?igsh=NDRnNmNwOGYwZ2dx" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
