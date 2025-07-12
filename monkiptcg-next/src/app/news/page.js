@@ -213,7 +213,19 @@ export default function NewsPage() {
     useEffect(() => {
         // 添加页面特定的body类名
         document.body.classList.add('news-page-body');
-        
+        // 检查URL参数，自动弹窗
+        if (typeof window !== 'undefined') {
+          const params = new URLSearchParams(window.location.search);
+          const id = params.get('id');
+          if (id) {
+            const news = newsData.find(item => String(item.id) === id) || previousNewsData.find(item => String(item.id) === id);
+            if (news) {
+              setSelectedNews(news);
+              setIsModalOpen(true);
+              document.body.style.overflow = 'hidden';
+            }
+          }
+        }
         return () => {
             // 组件卸载时移除类名
             document.body.classList.remove('news-page-body');

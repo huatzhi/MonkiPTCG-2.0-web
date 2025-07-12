@@ -8,10 +8,106 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 
+// 简化版团队成员数据
+const teamMembers = [
+  {
+    img: '/images/team/leadership/captain.jpg',
+    name: 'Terry Chan',
+    role: 'Team Leader',
+  },
+  {
+    img: '/images/team/leadership/manager.jpg',
+    name: 'Bobby Ao',
+    role: 'Executive Assistant',
+  },
+  {
+    img: '/images/team/management/finance.jpg',
+    name: 'Keagan Soo',
+    role: 'Team Finance',
+  },
+  {
+    img: '/images/team/management/agent.jpg',
+    name: 'Sammy',
+    role: 'Team Agent',
+  },
+  {
+    img: '/images/team/players/player1.jpg',
+    name: 'JustinWZD',
+    role: 'Main Player',
+  },
+  {
+    img: '/images/team/players/player2.jpg',
+    name: 'Yiam Wai Kit',
+    role: 'Main Player',
+  },
+  {
+    img: '/images/team/players/player3.jpg',
+    name: 'Tommy Leong',
+    role: 'Main Player',
+  },
+  {
+    img: '/images/team/players/player4.jpg',
+    name: 'Eden Lee',
+    role: 'Main Player',
+  },
+  {
+    img: '/images/team/players/player5.jpg',
+    name: 'Nick Kee',
+    role: 'Main Player',
+  },
+  {
+    img: '/images/team/players/player6.jpg',
+    name: 'Yoong Kai Jian',
+    role: 'Main Player',
+  },
+  // ... 可继续添加更多成员 ...
+];
+
+// 主页用真实新闻数据
+const newsData = [
+  {
+    id: 1,
+    title: "Tommy Leong: Back to Back Champion of TCGKL's Annual Biggest Tournament",
+    date: "June 1, 2025",
+    summary: "Congratulations to Tommy Leong for securing 1st place in TCGKL's Annual Biggest Tournament...",
+  },
+  {
+    id: 2,
+    title: "Monki Team Member - Nick Kee Secures 2nd Place in Malaysia MBL 2025",
+    date: "April 20, 2025",
+    summary: "Congratulations to Nick Kee for securing 2nd place in Malaysia MBL 2025...",
+  },
+];
+const previousNewsData = [
+  {
+    id: 101,
+    title: "Team Monki Member - Justin Wong Secures 2nd Place in Malaysia UBL Penang Section 2025",
+    date: "March 23, 2025",
+    summary: "Congratulations to our last ride \"Lugia佬(Lou)\" Justin Wong to win second place at Penang's Ultra Ball League!",
+  },
+];
+
+// 主页用真实文章数据
+const articlesData = [
+  {
+    id: 101,
+    title: "Card Mania 2025 Champion [Gardevoir Ex] Post-Tournament Report & Deck Guide",
+    author: "Tommy Leong",
+    date: "2025-04-15",
+    type: "free",
+    excerpt: "This article will introduce Tommy Leong's deep thoughts on Gardevoir ex",
+  },
+];
+
 export default function HomePage() {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const videoRef = useRef(null);
+
+  // 轮播索引
+  const [memberIndex, setMemberIndex] = useState(0);
+  const handlePrev = () => setMemberIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
+  const handleNext = () => setMemberIndex((prev) => (prev + 1) % teamMembers.length);
 
   useEffect(() => {
     // Navbar background change on scroll
@@ -93,92 +189,93 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Content Grid Section */}
-        <section className="home-section">
-          <h2>View</h2>
-          <div className="content-grid">
-            {/* Team Statistics */}
-            <div className="grid-card stats-card">
-              <div className="card-header">
-                <h3>Team Statistics</h3>
-                <i className="fas fa-chart-line"></i>
-              </div>
-              <div className="stats-grid">
-                <div className="stat-item">
-                  <div className="stat-number">20</div>
-                  <div className="stat-label">Team Members</div>
+        {/* 新主内容区域布局 */}
+        <section className="homepage-grid-section">
+          <div className="homepage-grid">
+            {/* 顶部 About Us 标题和 News 标题 */}
+            <div className="aboutus-title">About Us</div>
+            <div className="news-title">News</div>
+
+            {/* 左中+中间 合并后的 About Us 内容 */}
+            <div className="aboutus-content merged">
+              <div className="aboutus-flex">
+                <div className="aboutus-info">
+                  <p>
+                    Team Monki is a passionate and professional Pokémon TCG team based in Malaysia. Our mission is to connect players, share knowledge, and promote the competitive spirit of PTCG in the region.
+                  </p>
+                  <ul className="aboutus-highlights">
+                    <li>🏆 2025 TCGKL Champion</li>
+                    <li>🥈 2025 MBL Runner-up</li>
+                    <li>🌏 Multiple Worlds Qualifiers</li>
+                    <li>👥 20+ Active Members</li>
+                  </ul>
+                  <div className="aboutus-values">
+                    <span>Passion</span>
+                    <span>Teamwork</span>
+                    <span>Excellence</span>
+                    <span>Innovation</span>
+                  </div>
+                  <p style={{marginTop: '0.7rem'}}>
+                    Want to join or collaborate? <a href="/contact" className="aboutus-link">Contact us</a> us on social media!
+                  </p>
+                  <div className="aboutus-journey">
+                    <div className="aboutus-journey-title">Our Journey</div>
+                    <ul className="aboutus-journey-list">
+                      <li><span className="aboutus-journey-year">2023</span> Team founded, first tournaments.</li>
+                      <li><span className="aboutus-journey-year">2024</span> Multiple top finishes, team grows.</li>
+                      <li><span className="aboutus-journey-year">2025</span> TCGKL Champion, Worlds qualifiers.</li>
+                      <li><span className="aboutus-journey-year">Future</span> Keep growing and connecting players!</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="stat-item">
-                  <div className="stat-number">1</div>
-                  <div className="stat-label">Articles</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number">3</div>
-                  <div className="stat-label">News</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number">2024</div>
-                  <div className="stat-label">Founded</div>
+                <div className="aboutus-avatar">
+                  <img src="/images/team/leadership/captain.jpg" alt="Terry Chan" />
+                  <div className="aboutus-avatar-name">Terry Chan</div>
+                  <div className="aboutus-avatar-role">Team Leader</div>
                 </div>
               </div>
             </div>
 
-            {/* Latest News */}
-            <div className="grid-card news-card">
-              <div className="card-header">
-                <h3>Latest News</h3>
-                <i className="fas fa-newspaper"></i>
-              </div>
-              <div className="news-list">
-                <div className="news-item">
-                  <div className="news-date">2025-04-15</div>
-                  <div className="news-title">Card Mania 2025 Champion</div>
-                  <div className="news-excerpt">Tommy Leong wins the largest non-official PTCG event in Malaysia</div>
-                </div>
-                <div className="news-item">
-                  <div className="news-date">2025-03-28</div>
-                  <div className="news-title">MBL Success Story</div>
-                  <div className="news-excerpt">Nick Kee qualifies for World Championship twice in a row</div>
-                </div>
-              </div>
-              <Link href="/news" className="card-link">
-                View All News <i className="fas fa-arrow-right"></i>
-              </Link>
+            {/* 中间 Team Members 卡片 */}
+            {/* 中间 Team Members 卡片 */}
+
+            {/* 右侧 News 列表（上下贯穿） */}
+            <div className="news-list-block">
+              {/* 最新新闻 */}
+              <div className="news-section-title">Latest News</div>
+              {newsData.slice(0,3).map(news => (
+                <Link href={`/news?id=${news.id}`} key={news.id} className="news-list-item news-list-link">
+                  <div className="news-list-title">{news.title}</div>
+                  <div className="news-list-date">{news.date}</div>
+                  <div className="news-list-summary">{news.summary}</div>
+                </Link>
+              ))}
+              {/* 往期新闻 */}
+              <div className="news-section-title">Previous News</div>
+              {previousNewsData.slice(0,2).map(news => (
+                <Link href={`/news?id=${news.id}`} key={news.id} className="news-list-item news-list-link">
+                  <div className="news-list-title">{news.title}</div>
+                  <div className="news-list-date">{news.date}</div>
+                  <div className="news-list-summary">{news.summary}</div>
+                </Link>
+              ))}
+              <Link href="/news" className="news-list-more-btn">View More News &rarr;</Link>
             </div>
 
-            {/* Latest Articles */}
-            <div className="grid-card articles-card">
-              <div className="card-header">
-                <h3>Latest Articles</h3>
-                <i className="fas fa-book-open"></i>
-              </div>
-              <div className="article-list">
-                <div className="article-item">
-                  <div className="article-type free">Free</div>
-                  <div className="article-title">Card Mania 2025 Champion [Gardevoir Ex] Post-Tournament Report & Deck Guide</div>
-                  <div className="article-author">by Tommy Leong</div>
-                </div>
-              </div>
-              <Link href="/monki-insights" className="card-link">
-                Read More Articles <i className="fas fa-arrow-right"></i>
-              </Link>
-            </div>
-
-            {/* Partners */}
-            <div className="grid-card partners-card">
-              <div className="card-header">
-                <h3>Our Partners</h3>
-                <i className="fas fa-handshake"></i>
-              </div>
-              <div className="partners-content">
-                <div className="partner-logo">
-                  <Image src="/images/partners/sponsor.png" alt="Partner Logo" width={120} height={60} />
-                </div>
-                <p>We work with leading brands in the industry to provide the best experience for our players.</p>
-              </div>
-              <Link href="/partners" className="card-link">
-                Learn More <i className="fas fa-arrow-right"></i>
-              </Link>
+            {/* 下方横跨中间和右侧 Article 区块 */}
+            <div className="article-block">
+              <div className="article-section-title">Latest Articles</div>
+              {articlesData.slice(0,3).map(article => (
+                <Link href={`/monki-insights?id=${article.id}`} key={article.id} className="article-list-item article-list-link">
+                  <div className="article-list-title">{article.title}</div>
+                  <div className="article-list-meta">
+                    <span className="article-list-author">{article.author}</span>
+                    <span className="article-list-date">{article.date}</span>
+                  </div>
+                  <div className="article-list-excerpt">{article.excerpt}</div>
+                </Link>
+              ))}
+              <Link href="/monki-insights" className="article-list-more-btn">View More Articles &rarr;</Link>
             </div>
           </div>
         </section>

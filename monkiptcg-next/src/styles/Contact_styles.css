@@ -223,6 +223,15 @@
     font-size: 1rem !important;
 }
 
+/* Contact Us页面专属容器宽度，避免主页样式冲突 */
+.contact-page .container,
+.contact-page .main-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
 @media (max-width: 1024px) {
     .contact-grid {
         grid-template-columns: 1fr;

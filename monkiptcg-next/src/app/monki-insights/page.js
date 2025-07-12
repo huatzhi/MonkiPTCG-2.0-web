@@ -94,6 +94,19 @@ export default function MonkiInsightsPage() {
     // Initialize filtered articles
     useEffect(() => {
         setFilteredArticles(articlesData);
+        // 检查URL参数，自动弹窗
+        if (typeof window !== 'undefined') {
+          const params = new URLSearchParams(window.location.search);
+          const id = params.get('id');
+          if (id) {
+            const article = articlesData.find(item => String(item.id) === id);
+            if (article) {
+              setSelectedArticle(article);
+              setIsArticleModalOpen(true);
+              document.body.style.overflow = 'hidden';
+            }
+          }
+        }
     }, []);
 
     // useEffect(() => {
