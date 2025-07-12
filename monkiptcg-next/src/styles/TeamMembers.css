@@ -340,10 +340,9 @@ header.scrolled {
 }
 
 /* Team Row Layouts - 强制布局规则，确保从其他页面导航时保持一致 */
-.leadership .team-row,
-.management .team-row {
+.leadership .team-row {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 2rem !important;
     justify-items: center !important;
 }
@@ -356,10 +355,9 @@ header.scrolled {
 }
 
 /* 为body.team-members-page添加布局规则，确保最高优先级 */
-body.team-members-page .leadership .team-row,
-body.team-members-page .management .team-row {
+body.team-members-page .leadership .team-row {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 2rem !important;
     justify-items: center !important;
 }
@@ -435,8 +433,7 @@ body.team-members-page .players .team-row {
     transform: translateY(-5px);
 }
 
-.team-page .leadership .team-member,
-.team-page .management .team-member {
+.team-page .leadership .team-member {
     animation-delay: 0.2s;
     height: 500px !important;
 }
@@ -447,8 +444,7 @@ body.team-members-page .players .team-row {
 }
 
 /* 为body.team-members-page添加高度规则，确保最高优先级 */
-body.team-members-page .leadership .team-member,
-body.team-members-page .management .team-member {
+body.team-members-page .leadership .team-member {
     height: 500px !important;
 }
 
@@ -735,18 +731,16 @@ body.team-members-page .players .team-member {
 
 /* Responsive Design - 强制响应式规则 */
 @media (max-width: 1024px) {
-    .leadership .team-row,
-    .management .team-row {
-        grid-template-columns: 1fr !important;
+    .leadership .team-row {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
     .players .team-row {
         grid-template-columns: repeat(2, 1fr) !important;
     }
     
     /* 为body.team-members-page添加响应式规则 */
-    body.team-members-page .leadership .team-row,
-    body.team-members-page .management .team-row {
-        grid-template-columns: 1fr !important;
+    body.team-members-page .leadership .team-row {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
     body.team-members-page .players .team-row {
         grid-template-columns: repeat(2, 1fr) !important;
@@ -754,8 +748,7 @@ body.team-members-page .players .team-member {
 }
 
 @media (max-width: 768px) {
-    .team-page .leadership .team-row,
-    .team-page .management .team-row {
+    .team-page .leadership .team-row {
         grid-template-columns: 1fr;
     }
     
@@ -763,8 +756,7 @@ body.team-members-page .players .team-member {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    body.team-members-page .leadership .team-row,
-    body.team-members-page .management .team-row {
+    body.team-members-page .leadership .team-row {
         grid-template-columns: 1fr !important;
     }
     
@@ -847,8 +839,7 @@ body.team-members-page .players .team-member {
 }
 
 /* 为不同高度的卡片设置不同的滚动区域高度 */
-.team-page .leadership .achievements-list,
-.team-page .management .achievements-list {
+.team-page .leadership .achievements-list {
     max-height: 250px;
 }
 
@@ -919,10 +910,6 @@ footer {
 
 /* 特定板块的最小高度设置 */
 .leadership {
-    min-height: 550px;
-}
-
-.management {
     min-height: 550px;
 }
 

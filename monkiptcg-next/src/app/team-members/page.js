@@ -254,19 +254,13 @@ export default function TeamMembersPage() {
                               </div>
                               </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Management Section */}
-              <div className="team-section management">
-                <h2 className="section-title">Management</h2>
-                <div className="team-row">
-                  {/* Financial Manager */}
+                  {/* Team Finance */}
                   <div className="team-member">
                     <div className={getCardClass('finance')} onClick={handleCardClick('finance')}>
                       <div className="member-front">
                         <div className="member-image">
-                          <img src="/images/team/management/finance.jpg" alt="Financial Manager" />
+                          <img src="/images/team/leadership/finance.jpg" alt="Team Finance" />
                         </div>
                         <div className="member-info">
                           <h3>Keagan Soo</h3>
@@ -298,45 +292,10 @@ export default function TeamMembersPage() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Agent */}
-                  <div className="team-member">
-                    <div className={getCardClass('agent')} onClick={handleCardClick('agent')}>
-                      <div className="member-front">
-                        <div className="member-image">
-                          <img src="/images/team/management/agent.jpg" alt="Team Agent" />
-                        </div>
-                        <div className="member-info">
-                          <h3>Sammy</h3>
-                          <p className="role">Team Agent</p>
-                          <div className="birthday">
-                              <i className="fas fa-birthday-cake"></i>
-                            <span>05/28</span>
-                            </div>
-                          <p className="motto"></p>
-                          <div className="social-links">
-                            <a href="https://www.facebook.com/sammy.khoo.89?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/mantao89?igsh=ZHZsZzAya3pucGNx" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="member-back">
-                        <h4>Team Agent</h4>
-                        <div className="achievements-section">
-                          <h5>Professional Achievements</h5>
-                          <ul className="achievements-list">
-                            <li></li>
-                            </ul>
-                              </div>
-                        <div className="favorite-pokemon-section">
-                          <h5>Favorite Pokemon</h5>
-                          <div className="favorite-pokemon">Eevee</div>
-                              </div>
-                              </div>
-                    </div>
-                  </div>
                 </div>
               </div>
+
+
 
               {/* Players Section */}
               <div className="team-section players">
@@ -788,24 +747,24 @@ export default function TeamMembersPage() {
                     </div>
                   </div>
 
-                  {/* Player 12 */}
+                  {/* Player 12 - Sammy */}
                   <div className="team-member">
                     <div className={getCardClass('player12')} onClick={handleCardClick('player12')}>
                       <div className="member-front">
                         <div className="member-image">
-                          <img src="/images/team/players/player12.jpg" alt="Player 12" />
+                          <img src="/images/team/players/player12.jpg" alt="Sammy" />
                         </div>
                         <div className="member-info">
-                          <h3>Carlos</h3>
+                          <h3>Sammy</h3>
                           <p className="role">Main Player</p>
                           <div className="birthday">
                               <i className="fas fa-birthday-cake"></i>
-                            <span>04/15</span>
+                            <span>05/28</span>
                             </div>
                           <p className="motto"></p>
                           <div className="social-links">
-                            <a href="https://www.facebook.com/carlos.goonting?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/_thegoonster?igsh=MWk5MDJqeWFjcmM0" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/sammy.khoo.89?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/mantao89?igsh=ZHZsZzAya3pucGNx" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
                           </div>
                         </div>
                       </div>
@@ -814,16 +773,14 @@ export default function TeamMembersPage() {
                         <div className="achievements-section">
                           <h5>Tournament Achievements</h5>
                           <ul className="achievements-list">
-                              <li>2024-25 Ultra Ball League Top 4</li>
-                              <li></li>
-                              <li></li>
+                            <li></li>
                             </ul>
                               </div>
                         <div className="favorite-pokemon-section">
                           <h5>Favorite Pokemon</h5>
-                          <div className="favorite-pokemon">Garchomp</div>
+                          <div className="favorite-pokemon">Eevee</div>
                               </div>
-                      </div>
+                              </div>
                     </div>
                   </div>
 
@@ -976,6 +933,45 @@ export default function TeamMembersPage() {
                         <div className="favorite-pokemon-section">
                           <h5>Favorite Pokemon</h5>
                           <div className="favorite-pokemon">Budew</div>
+                              </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Player 17 - Carlos */}
+                  <div className="team-member">
+                    <div className={getCardClass('player17')} onClick={handleCardClick('player17')}>
+                      <div className="member-front">
+                        <div className="member-image">
+                          <img src="/images/team/players/player17.jpg" alt="Carlos" />
+                        </div>
+                        <div className="member-info">
+                          <h3>Carlos</h3>
+                          <p className="role">Main Player</p>
+                          <div className="birthday">
+                              <i className="fas fa-birthday-cake"></i>
+                            <span>04/15</span>
+                            </div>
+                          <p className="motto"></p>
+                          <div className="social-links">
+                            <a href="https://www.facebook.com/carlos.goonting?mibextid=LQQJ4d" target="_blank" data-social-link><i className="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/_thegoonster?igsh=MWk5MDJqeWFjcmM0" target="_blank" data-social-link><i className="fab fa-instagram"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="member-back">
+                        <h4>Main Player</h4>
+                        <div className="achievements-section">
+                          <h5>Tournament Achievements</h5>
+                          <ul className="achievements-list">
+                              <li>2024-25 Ultra Ball League Top 4</li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                              </div>
+                        <div className="favorite-pokemon-section">
+                          <h5>Favorite Pokemon</h5>
+                          <div className="favorite-pokemon">Garchomp</div>
                               </div>
                       </div>
                     </div>

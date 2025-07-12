@@ -26,11 +26,6 @@ const teamMembers = [
     role: 'Team Finance',
   },
   {
-    img: '/images/team/management/agent.jpg',
-    name: 'Sammy',
-    role: 'Team Agent',
-  },
-  {
     img: '/images/team/players/player1.jpg',
     name: 'JustinWZD',
     role: 'Main Player',
@@ -58,6 +53,11 @@ const teamMembers = [
   {
     img: '/images/team/players/player6.jpg',
     name: 'Yoong Kai Jian',
+    role: 'Main Player',
+  },
+  {
+    img: '/images/team/management/agent.jpg',
+    name: 'Sammy',
     role: 'Main Player',
   },
   // ... 可继续添加更多成员 ...
