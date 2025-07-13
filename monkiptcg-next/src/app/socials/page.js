@@ -76,7 +76,6 @@ export default function SocialsPage() {
                     <div className="sidebar-content">
                         <h3>Quick Links</h3>
                         <ul>
-                            <li><a href="#live-streams">Live Streams</a></li>
                             <li><a href="#upcoming-events">Upcoming Events</a></li>
                             <li><a href="#community-posts">Community Posts</a></li>
                             <li><a href="#discord">Join Discord</a></li>
@@ -111,28 +110,25 @@ export default function SocialsPage() {
                             </div>
                         </div>
 
-                        {/* Live Streams Section */}
-                        <div className="social-section" id="live-streams">
-                            <h2>Media & Content</h2>
-                            <div className="stream-schedule">
-                                <div className="social-card">
-                                    <i className="fab fa-twitch fa-2x"></i>
-                                    <div className="schedule-info">
-                                        <h3>Weekly Deck Building/Playtest Sessions</h3>
-                                        <p>Time Schedule Coming Soon</p>
-                                        <a href="#" className="social-button">Stay Tuned</a>
-                                    </div>
-                                </div>
-                                <div className="social-card">
-                                    <i className="fab fa-youtube fa-2x"></i>
-                                    <div className="schedule-info">
-                                        <h3>Team's Vlogs</h3>
-                                        <p>Comming Soon</p>
-                                        <a href="#" className="social-button">Coming Soon</a>
+                        {/* Discord Section */}
+                        <div className="social-section" id="discord">
+                            <h2>Discord Community</h2>
+                            <div className="discord-section">
+                                <div className="discord-card">
+                                    <i className="fab fa-discord fa-4x"></i>
+                                    <div className="discord-info">
+                                        <h3>Team Monki Discord</h3>
+                                        <p>Join our Discord community for tournament updates, strategy discussions, and community events.</p>
+                                        <a href="#" className="discord-button coming-soon">
+                                            <i className="fab fa-discord"></i>
+                                            Coming Soon
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
 
                         {/* Community Engagement */}
                         <div className="social-section" id="community-posts">
