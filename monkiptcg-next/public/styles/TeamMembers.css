@@ -206,12 +206,7 @@ header.scrolled {
     margin: 0 auto;
 }
 
-/* Management Section - 2 cards in one row */
-.management .team-row {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 1000px;
-    margin: 0 auto;
-}
+
 
 /* Players Section - 3 cards per row */
 .players .team-row {
@@ -308,8 +303,7 @@ header.scrolled {
     border-color: rgba(0, 255, 0, 0.3);
 }
 
-.leadership .team-member,
-.management .team-member {
+.leadership .team-member {
     min-height: 720px;
 }
 
@@ -593,8 +587,10 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .leadership .team-row,
-    .management .team-row,
+    .leadership .team-row {
+        grid-template-columns: 1fr;
+    }
+    
     .players .team-row {
         grid-template-columns: 1fr;
     }

@@ -719,8 +719,7 @@ body.team-members-page .players .team-member {
     }
     
     /* 移动端调整滚动区域高度 */
-    .team-page .leadership .achievements-list,
-    .team-page .management .achievements-list {
+    .team-page .leadership .achievements-list {
         max-height: 200px;
     }
     
@@ -735,7 +734,7 @@ body.team-members-page .players .team-member {
         grid-template-columns: repeat(2, 1fr) !important;
     }
     .players .team-row {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: 1fr !important;
     }
     
     /* 为body.team-members-page添加响应式规则 */
@@ -743,7 +742,7 @@ body.team-members-page .players .team-member {
         grid-template-columns: repeat(2, 1fr) !important;
     }
     body.team-members-page .players .team-row {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: 1fr !important;
     }
 }
 
@@ -753,7 +752,7 @@ body.team-members-page .players .team-member {
     }
     
     .team-page .players .team-row {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
     
     body.team-members-page .leadership .team-row {
@@ -761,7 +760,7 @@ body.team-members-page .players .team-member {
     }
     
     body.team-members-page .players .team-row {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: 1fr !important;
     }
     
     .team-page .hero-section {

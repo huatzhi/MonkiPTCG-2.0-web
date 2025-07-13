@@ -21,7 +21,7 @@ const teamMembers = [
     role: 'Executive Assistant',
   },
   {
-    img: '/images/team/management/finance.jpg',
+    img: '/images/team/leadership/finance.jpg',
     name: 'Keagan Soo',
     role: 'Team Finance',
   },
@@ -56,7 +56,7 @@ const teamMembers = [
     role: 'Main Player',
   },
   {
-    img: '/images/team/management/agent.jpg',
+    img: '/images/team/players/player12.jpg',
     name: 'Sammy',
     role: 'Main Player',
   },
