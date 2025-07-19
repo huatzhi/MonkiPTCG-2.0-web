@@ -8,7 +8,9 @@ export default function FloatingPartnerButton() {
 
   const handleClick = () => {
     // 跳转到合作伙伴的 Instagram 页面
-    window.open('https://www.instagram.com/myhobbyncollectibles?igsh=MXNvOGtrYTltbGU5YQ==', '_blank');
+    if (typeof window !== 'undefined') {
+      window.open('https://www.instagram.com/myhobbyncollectibles?igsh=MXNvOGtrYTltbGU5YQ==', '_blank');
+    }
   };
 
   return (

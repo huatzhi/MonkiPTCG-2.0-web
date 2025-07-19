@@ -310,7 +310,7 @@ footer {
         width: auto;
     }
 
-    .join-us-button-container {
+    .nav-action-buttons {
         display: none;
     }
 
@@ -646,6 +646,436 @@ footer {
     }
 }
 
+/* Navigation Action Buttons Styles */
+.nav-action-buttons {
+    position: absolute;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Search Button Styles */
+.search-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+/* Share Button Styles */
+.share-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+/* Search Overlay Styles */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+}
+
+.search-modal {
+    background: rgba(26, 26, 26, 0.95);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 70vh;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-input-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.search-icon {
+    color: #10e07f;
+    flex-shrink: 0;
+}
+
+.search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.close-search {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.close-search:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-results {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.search-loading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    justify-content: center;
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid #10e07f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.no-results {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 2rem;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.result-item {
+    display: block;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.result-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(16, 224, 127, 0.3);
+    transform: translateX(5px);
+}
+
+.result-type {
+    font-size: 0.8rem;
+    color: #10e07f;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.result-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.result-excerpt {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+}
+
+.search-suggestions {
+    padding: 1rem;
+}
+
+.search-suggestions h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.suggestion-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.suggestion-tags button {
+    background: rgba(16, 224, 127, 0.1);
+    border: 1px solid rgba(16, 224, 127, 0.3);
+    color: #10e07f;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.suggestion-tags button:hover {
+    background: rgba(16, 224, 127, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Share Dropdown Styles */
+.share-container {
+    position: relative;
+}
+
+.share-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(26, 26, 26, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 200px;
+    z-index: 1001;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.share-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.share-header span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.close-share {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.close-share:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.share-options {
+    padding: 0.5rem;
+}
+
+.share-option {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0.8rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.share-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.share-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--share-color);
+}
+
+.share-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Social Media Section Styles */
+.social-media-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.social-media-container {
+    padding: 2rem;
+}
+
+.social-media-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.social-media-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #10e07f;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.social-media-subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
+.social-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.social-media-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-media-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--platform-color) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.social-media-card:hover::before {
+    opacity: 0.1;
+}
+
+.social-media-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--platform-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-media-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--platform-color);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.social-media-card:hover .social-media-icon {
+    transform: scale(1.1);
+}
+
+.social-media-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.social-media-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.social-media-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.3;
+}
+
 /* Join Us Button Styles */
 .join-us-button-container {
     position: absolute;
@@ -699,6 +1129,338 @@ footer {
 .join-us-button span {
     position: relative;
     z-index: 1;
+}
+
+/* Weekly Battle Info Styles */
+.weekly-battle-info {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    height: fit-content;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.battle-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.battle-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #10e07f;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.battle-badge {
+    background: linear-gradient(135deg, #10e07f 0%, #0fd070 100%);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(16, 224, 127, 0.3);
+}
+
+.battle-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.winner-section,
+.next-battle-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.winner-info,
+.next-battle-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.winner-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #10e07f;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(16, 224, 127, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(16, 224, 127, 0.2);
+}
+
+.winner-deck,
+.winner-date,
+.battle-date,
+.battle-time,
+.battle-location {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.deck-label,
+.date-label,
+.time-label,
+.location-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.deck-name,
+.date-value,
+.time-value,
+.location-value {
+    color: #fff;
+    font-weight: 600;
+    text-align: right;
+}
+
+.deck-name {
+    color: #ffd700;
+    font-style: italic;
+}
+
+.battle-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.battle-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.stat-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #10e07f;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+/* Weekly Battle Info Responsive */
+@media (max-width: 1024px) {
+    .weekly-battle-info {
+        padding: 1.2rem;
+    }
+    
+    .battle-title {
+        font-size: 1.2rem;
+    }
+    
+    .winner-section,
+    .next-battle-section {
+        padding: 0.8rem;
+    }
+    
+    .winner-name {
+        font-size: 1rem;
+    }
+    
+    .winner-deck,
+    .winner-date,
+    .battle-date,
+    .battle-time,
+    .battle-location {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .weekly-battle-info {
+        padding: 1rem;
+    }
+    
+    .battle-content {
+        gap: 1rem;
+    }
+    
+    .winner-section,
+    .next-battle-section {
+        padding: 0.7rem;
+    }
+    
+    .battle-stats {
+        gap: 0.5rem;
+    }
+    
+    .stat-number {
+        font-size: 1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .weekly-battle-info {
+        padding: 0.8rem;
+    }
+    
+    .battle-title {
+        font-size: 1.1rem;
+    }
+    
+    .battle-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+    
+    .winner-name {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+    
+    .winner-deck,
+    .winner-date,
+    .battle-date,
+    .battle-time,
+    .battle-location {
+        font-size: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+    
+    .deck-name,
+    .date-value,
+    .time-value,
+    .location-value {
+        text-align: left;
+    }
+}
+
+/* Social Media Section Responsive */
+@media (max-width: 1024px) {
+    .social-media-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        max-width: 500px;
+    }
+    
+    .social-media-container {
+        padding: 1.5rem;
+    }
+    
+    .social-media-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-media-section {
+        padding: 0 1rem;
+        margin: 1.5rem auto;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .social-media-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        max-width: 400px;
+    }
+    
+    .social-media-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .social-media-title {
+        font-size: 1.6rem;
+    }
+    
+    .social-media-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .social-media-card {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .social-media-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-media-name {
+        font-size: 0.9rem;
+    }
+    
+    .social-media-desc {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-media-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+        max-width: 300px;
+    }
+    
+    .social-media-container {
+        padding: 1rem;
+    }
+    
+    .social-media-title {
+        font-size: 1.4rem;
+    }
+    
+    .social-media-card {
+        padding: 0.8rem 0.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .social-media-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .social-media-name {
+        font-size: 0.8rem;
+    }
+    
+    .social-media-desc {
+        font-size: 0.7rem;
+    }
 }
 
 /* Mobile responsive for floating button */

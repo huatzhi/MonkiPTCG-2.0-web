@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import SearchBar from './SearchBar';
+import ShareButton from './ShareButton';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -103,8 +105,10 @@ export default function Navigation() {
         <li><Link href="/contact" onClick={closeMenu}>Contact Us</Link></li>
       </ul>
 
-      {/* Join Us Button */}
-      <div className="join-us-button-container">
+      {/* Action Buttons */}
+      <div className="nav-action-buttons">
+        <SearchBar />
+        <ShareButton />
         <Link href="/contact" className="join-us-button">
           <span>Join Us</span>
         </Link>

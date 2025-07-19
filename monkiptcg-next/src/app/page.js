@@ -8,6 +8,8 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import FloatingPartnerButton from '../components/FloatingPartnerButton';
+import SocialMediaSection from '../components/SocialMediaSection';
+import WeeklyBattleInfo from '../components/WeeklyBattleInfo';
 
 // 简化版团队成员数据
 const teamMembers = [
@@ -112,59 +114,61 @@ export default function HomePage() {
 
   useEffect(() => {
     // Navbar background change on scroll
-    const handleScroll = () => {
-      setHeaderScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        setHeaderScrolled(window.scrollY > 50);
+      };
+      window.addEventListener('scroll', handleScroll);
 
-    const sections = document.querySelectorAll('.home-section');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-    sections.forEach((section) => observer.observe(section));
-
-    // Video animation logic
-    const videoNode = videoRef.current;
-    const onVideoLoaded = () => {
-      setIsVideoVisible(true);
-      const videoContent = document.querySelector('.video-content');
-      if (videoContent) {
-        const elements = videoContent.querySelectorAll('img, p, .cyberpunk-line');
-        setTimeout(() => {
-          elements.forEach((element, index) => {
-            setTimeout(() => {
-              element.classList.add('visible');
-            }, index * 200);
+      const sections = document.querySelectorAll('.home-section');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
           });
-        }, 500);
-      }
-    };
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+      sections.forEach((section) => observer.observe(section));
 
-    if (videoNode) {
-      if (videoNode.readyState >= 3) {
-        onVideoLoaded();
-      } else {
-        videoNode.addEventListener('loadeddata', onVideoLoaded);
-      }
-    }
+      // Video animation logic
+      const videoNode = videoRef.current;
+      const onVideoLoaded = () => {
+        setIsVideoVisible(true);
+        const videoContent = document.querySelector('.video-content');
+        if (videoContent) {
+          const elements = videoContent.querySelectorAll('img, p, .cyberpunk-line');
+          setTimeout(() => {
+            elements.forEach((element, index) => {
+              setTimeout(() => {
+                element.classList.add('visible');
+              }, index * 200);
+            });
+          }, 500);
+        }
+      };
 
-    // Cleanup function
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      sections.forEach((section) => observer.unobserve(section));
       if (videoNode) {
-        videoNode.removeEventListener('loadeddata', onVideoLoaded);
+        if (videoNode.readyState >= 3) {
+          onVideoLoaded();
+        } else {
+          videoNode.addEventListener('loadeddata', onVideoLoaded);
+        }
       }
-    };
+
+      // Cleanup function
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        sections.forEach((section) => observer.unobserve(section));
+        if (videoNode) {
+          videoNode.removeEventListener('loadeddata', onVideoLoaded);
+        }
+      };
+    }
   }, []);
 
   return (
@@ -187,11 +191,17 @@ export default function HomePage() {
             <p className="cyberpunk-subtitle">Join Our Journey</p>
             <div className="cyberpunk-line"></div>
             <p className="cyberpunk-description">Welcome to the world of competitive PTCG</p>
-          </div>
-        </div>
+                  </div>
+      </div>
 
-        {/* 新主内容区域布局 */}
-        <section className="homepage-grid-section">
+      {/* Social Media Section with Weekly Battle Info */}
+      <div className="social-media-section">
+        <WeeklyBattleInfo />
+        <SocialMediaSection />
+      </div>
+
+      {/* 新主内容区域布局 */}
+      <section className="homepage-grid-section">
           <div className="homepage-grid">
             {/* 顶部 About Us 标题和 News 标题 */}
             <div className="aboutus-title">About Us</div>
