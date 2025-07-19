@@ -66,9 +66,6 @@ export default function Navigation() {
         <div className="logo">
           <img src="/images/logo.png" alt="Team Monki Logo" />
         </div>
-        <div className="partner-logo">
-          <img src="/images/partners/sponsor.png" alt="MyHobby & Collectibles Logo" />
-        </div>
       </div>
       
       {/* Hamburger Menu Button */}
@@ -105,6 +102,13 @@ export default function Navigation() {
         <li><Link href="/monki-insights" onClick={closeMenu}>Monki Insights</Link></li>
         <li><Link href="/contact" onClick={closeMenu}>Contact Us</Link></li>
       </ul>
+
+      {/* Join Us Button */}
+      <div className="join-us-button-container">
+        <Link href="/contact" className="join-us-button">
+          <span>Join Us</span>
+        </Link>
+      </div>
 
       {/* Mobile Menu Overlay - Removed for dropdown animation */}
     </nav>

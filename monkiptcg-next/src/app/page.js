@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
+import FloatingPartnerButton from '../components/FloatingPartnerButton';
 
 // 简化版团队成员数据
 const teamMembers = [
@@ -283,6 +284,9 @@ export default function HomePage() {
 
       {/* Footer */}
       <Footer />
+      
+      {/* Floating Partner Button */}
+      <FloatingPartnerButton />
     </>
   );
 }
