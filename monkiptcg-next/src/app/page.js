@@ -10,6 +10,7 @@ import Navigation from '../components/Navigation';
 import FloatingPartnerButton from '../components/FloatingPartnerButton';
 import SocialMediaSection from '../components/SocialMediaSection';
 import WeeklyBattleInfo from '../components/WeeklyBattleInfo';
+import Slideshow from '../components/Slideshow';
 
 // 简化版团队成员数据
 const teamMembers = [
@@ -197,7 +198,10 @@ export default function HomePage() {
       {/* Social Media Section with Weekly Battle Info */}
       <div className="social-media-section">
         <WeeklyBattleInfo />
-        <SocialMediaSection />
+        <div className="social-media-slideshow-wrapper">
+          <SocialMediaSection />
+          <Slideshow />
+        </div>
       </div>
 
       {/* 新主内容区域布局 */}

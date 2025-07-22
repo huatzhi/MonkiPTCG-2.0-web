@@ -1463,6 +1463,111 @@ footer {
     }
 }
 
+/* Social Media Slideshow Wrapper - column layout for all screen sizes */
+.social-media-slideshow-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .social-media-slideshow-wrapper {
+    gap: 1.5rem;
+  }
+  .slideshow-container {
+    max-width: 100%;
+    min-height: 220px;
+  }
+}
+
+/* 让社交媒体卡片和轮播图高度一致 */
+.social-media-slideshow-wrapper > .social-media-container {
+  align-self: stretch;
+}
+
+.slideshow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  min-height: 340px;
+  max-width: 600px; /* 与社交媒体卡片一致 */
+  margin: 0 auto;
+}
+
+.slideshow-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #181818;
+}
+
+.slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+.slideshow-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(26,26,26,0.7);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.slideshow-arrow.left { left: 10px; }
+.slideshow-arrow.right { right: 10px; }
+.slideshow-arrow:hover { background: #10e07f; color: #181818; }
+
+.slideshow-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.slideshow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #888;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+.slideshow-dot.active {
+  background: #10e07f;
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .social-media-slideshow-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .slideshow-container {
+    max-width: 100%;
+    min-height: 220px;
+  }
+}
+
 /* Mobile responsive for floating button */
 @media (max-width: 768px) {
     .floating-partner-button {
@@ -1504,4 +1609,10 @@ footer {
         width: 55px !important;
         height: 55px !important;
     }
+}
+
+@media (min-width: 1025px) {
+  .weekly-battle-info {
+    margin-left: 5rem;
+  }
 }
