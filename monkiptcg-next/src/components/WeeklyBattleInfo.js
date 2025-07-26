@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './WeeklyBattleInfo.module.css';
 
 const WeeklyBattleInfo = () => {
   // 模拟数据 - 实际使用时可以从API或数据库获取
@@ -15,60 +16,64 @@ const WeeklyBattleInfo = () => {
   };
 
   return (
-    <div className="weekly-battle-info">
-      <div className="battle-header">
-        <h3 className="battle-title">Weekly Shop Battle</h3>
-        <div className="battle-badge">每周商店战斗</div>
+    <div className={styles.weeklyBattleInfo}>
+      <div className={styles.battleHeader}>
+        <h3 className={styles.battleTitle}>Weekly Shop Battle</h3>
+        <div className={styles.battleBadge}>每周商店战斗</div>
       </div>
       
-      <div className="battle-content">
-        <div className="winner-section">
-          <h4 className="section-title">🏆 本周冠军</h4>
-          <div className="winner-info">
-            <div className="winner-name">{currentWinner.name}</div>
-            <div className="winner-deck">
-              <span className="deck-label">使用卡组:</span>
-              <span className="deck-name">{currentWinner.deck}</span>
+      <div className={styles.battleContent}>
+        <div className={styles.winnerSection}>
+          <h4 className={styles.sectionTitle}>
+            🏆 Weekly Top
+          </h4>
+          <div className={styles.winnerInfo}>
+            <div className={styles.winnerName}>{currentWinner.name}</div>
+            <div className={styles.winnerDeck}>
+              <span className={styles.deckLabel}>Deck:</span>
+              <span className={styles.deckName}>{currentWinner.deck}</span>
             </div>
-            <div className="winner-date">
-              <span className="date-label">获胜日期:</span>
-              <span className="date-value">{currentWinner.date}</span>
+            <div className={styles.winnerDate}>
+              <span className={styles.dateLabel}>Date:</span>
+              <span className={styles.dateValue}>{currentWinner.date}</span>
             </div>
           </div>
         </div>
         
-        <div className="next-battle-section">
-          <h4 className="section-title">⏰ 下次比赛</h4>
-          <div className="next-battle-info">
-            <div className="battle-date">
-              <span className="date-label">日期:</span>
-              <span className="date-value">{nextBattle.date}</span>
+        <div className={styles.nextBattleSection}>
+          <h4 className={styles.sectionTitle}>
+            ⏰ 下次比赛
+          </h4>
+          <div className={styles.nextBattleInfo}>
+            <div className={styles.battleDate}>
+              <span className={styles.dateLabel}>日期:</span>
+              <span className={styles.dateValue}>{nextBattle.date}</span>
             </div>
-            <div className="battle-time">
-              <span className="time-label">时间:</span>
-              <span className="time-value">{nextBattle.time}</span>
+            <div className={styles.battleTime}>
+              <span className={styles.timeLabel}>时间:</span>
+              <span className={styles.timeValue}>{nextBattle.time}</span>
             </div>
-            <div className="battle-location">
-              <span className="location-label">地点:</span>
-              <span className="location-value">{nextBattle.location}</span>
+            <div className={styles.battleLocation}>
+              <span className={styles.locationLabel}>地点:</span>
+              <span className={styles.locationValue}>{nextBattle.location}</span>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="battle-footer">
-        <div className="battle-stats">
-          <div className="stat-item">
-            <span className="stat-number">52</span>
-            <span className="stat-label">参赛者</span>
+      <div className={styles.battleFooter}>
+        <div className={styles.battleStats}>
+          <div className={styles.statItem}>
+            <span className={styles.statNumber}>52</span>
+            <span className={styles.statLabel}>participants</span>
           </div>
-          <div className="stat-item">
-            <span className="stat-number">8</span>
-            <span className="stat-label">轮次</span>
+          <div className={styles.statItem}>
+            <span className={styles.statNumber}>8</span>
+            <span className={styles.statLabel}>Rounds</span>
           </div>
-          <div className="stat-item">
-            <span className="stat-number">4</span>
-            <span className="stat-label">小时</span>
+          <div className={styles.statItem}>
+            <span className={styles.statNumber}>4</span>
+            <span className={styles.statLabel}>Hours</span>
           </div>
         </div>
       </div>

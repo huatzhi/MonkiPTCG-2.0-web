@@ -1,0 +1,224 @@
+.weeklyBattleInfo {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    height: fit-content;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.battleHeader {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.battleTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #10e07f;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.battleBadge {
+    background: linear-gradient(135deg, #10e07f 0%, #0fd070 100%);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(16, 224, 127, 0.3);
+}
+
+.battleContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.winnerSection,
+.nextBattleSection {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.winnerInfo,
+.nextBattleInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.winnerName {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #10e07f;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(16, 224, 127, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(16, 224, 127, 0.2);
+}
+
+.winnerDeck,
+.winnerDate,
+.battleDate,
+.battleTime,
+.battleLocation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.deckLabel,
+.dateLabel,
+.timeLabel,
+.locationLabel {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.deckName,
+.dateValue,
+.timeValue,
+.locationValue {
+    color: #fff;
+    font-weight: 600;
+    text-align: right;
+}
+
+.deckName {
+    color: #ffd700;
+    font-style: italic;
+}
+
+.battleFooter {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.battleStats {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.statNumber {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #10e07f;
+}
+
+.statLabel {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .weeklyBattleInfo {
+        padding: 1.2rem;
+    }
+    .battleTitle {
+        font-size: 1.2rem;
+    }
+    .winnerSection,
+    .nextBattleSection {
+        padding: 0.8rem;
+    }
+    .winnerName {
+        font-size: 1rem;
+    }
+    .winnerDeck,
+    .winnerDate,
+    .battleDate,
+    .battleTime,
+    .battleLocation {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .weeklyBattleInfo {
+        padding: 1rem;
+    }
+    .battleContent {
+        gap: 1rem;
+    }
+    .winnerSection,
+    .nextBattleSection {
+        padding: 0.7rem;
+    }
+    .battleStats {
+        gap: 0.5rem;
+    }
+    .statNumber {
+        font-size: 1rem;
+    }
+    .statLabel {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .weeklyBattleInfo {
+        padding: 0.8rem;
+    }
+    .battleTitle {
+        font-size: 1.1rem;
+    }
+    .battleBadge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+    .winnerName {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+    .winnerDeck,
+    .winnerDate,
+    .battleDate,
+    .battleTime,
+    .battleLocation {
+        font-size: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+    .deckName,
+    .dateValue,
+    .timeValue,
+    .locationValue {
+        text-align: left;
+    }
+}
+
+@media (min-width: 1025px) {
+  .weeklyBattleInfo {
+    margin-left: 5rem;
+  }
+} 
