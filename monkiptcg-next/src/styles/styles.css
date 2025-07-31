@@ -928,7 +928,7 @@
 .homepage-grid-section {
   width: 100%;
   max-width: 1400px;
-  margin: 3rem auto 0 auto;
+  margin: 1rem auto 0 auto;  /* 从3rem增加到5rem，增加与上方卡片的间距 */
   padding: 0 2rem 3rem 2rem;
   box-sizing: border-box;
 }

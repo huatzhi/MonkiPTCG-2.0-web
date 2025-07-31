@@ -288,7 +288,8 @@ footer {
         justify-content: space-between;
         padding: 0 1rem;
         align-items: center;
-        min-height: 50px;
+        min-height: 60px;  /* 增加最小高度，确保空间充足 */
+        position: relative;
     }
 
     .logo-container {
@@ -297,31 +298,37 @@ footer {
         display: flex;
         align-items: center;
         gap: 0.8rem;
-        flex-shrink: 0;
+        flex-shrink: 1;  /* 允许logo容器缩小 */
+        max-width: 60%;  /* 限制logo容器最大宽度 */
     }
 
     .logo img {
-        height: 50px;
+        height: 45px;  /* 减小logo高度 */
         width: auto;
     }
 
     .partner-logo img {
-        height: 35px;
+        height: 30px;  /* 减小partner logo高度 */
         width: auto;
     }
 
     .nav-action-buttons {
-        display: none;
+        display: none !important;  /* 强制隐藏 */
     }
 
     .hamburger-menu {
         display: flex;
-        margin-left: auto;
+        position: absolute;  /* 使用绝对定位 */
+        right: 1rem;  /* 固定右边距 */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1003;  /* 提高层叠顺序 */
+        margin-left: 0;  /* 移除margin-left */
     }
 
     .nav-links {
         position: absolute;
-        top: calc(100% + 5px);
+        top: 100%;  /* 确保紧贴navbar底部 */
         right: 0;
         width: 280px;
         max-height: 0;
@@ -411,6 +418,7 @@ footer {
         padding: 8px 0;
         list-style: none;
         border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 100%;  /* 确保不超出父容器 */
     }
 
     .dropdown.open .dropdown-content {
@@ -479,34 +487,36 @@ footer {
 @media (max-width: 480px) {
     .navbar {
         padding: 0 0.5rem;
-        min-height: 40px;
+        min-height: 50px;  /* 增加最小高度 */
     }
 
     .logo-container {
         gap: 0.5rem;
-        flex-shrink: 0;
+        flex-shrink: 1;  /* 允许缩小 */
+        max-width: 55%;  /* 进一步限制宽度 */
     }
 
     .logo img {
-        height: 40px;
+        height: 35px;  /* 减小logo高度 */
         width: auto;
     }
 
     .partner-logo img {
-        height: 28px;
+        height: 25px;  /* 减小partner logo高度 */
         width: auto;
     }
 
     .hamburger-menu {
-        right: 1rem;
+        right: 0.5rem;  /* 减少右边距 */
         width: 25px;
         height: 20px;
+        z-index: 1003;  /* 确保层级 */
     }
 
     .nav-links {
         width: 100%;
         right: 0;
-        top: calc(100% + 3px);
+        top: 100%;  /* 确保紧贴navbar底部 */
         padding: 0 1rem;
         border-radius: 0 0 8px 8px;
     }
@@ -535,27 +545,30 @@ footer {
 @media (max-width: 360px) {
     .navbar {
         padding: 0 0.3rem;
-        min-height: 35px;
+        min-height: 45px;  /* 增加最小高度 */
     }
 
     .logo-container {
         gap: 0.3rem;
+        max-width: 50%;  /* 进一步限制宽度 */
+        flex-shrink: 1;  /* 允许缩小 */
     }
 
     .logo img {
-        height: 35px;
+        height: 30px;  /* 减小logo高度 */
         width: auto;
     }
 
     .partner-logo img {
-        height: 25px;
+        height: 20px;  /* 减小partner logo高度 */
         width: auto;
     }
 
     .hamburger-menu {
-        right: 0.5rem;
+        right: 0.3rem;  /* 减少右边距 */
         width: 22px;
         height: 18px;
+        z-index: 1003;  /* 确保层级 */
     }
 
     .hamburger-line {
@@ -962,7 +975,7 @@ footer {
 .social-media-section {
     width: 100%;
     max-width: 1400px;
-    margin: 2rem auto;
+    margin: 3rem auto;  /* 从2rem增加到4rem，让卡片离视频更远 */
     padding: 0 2rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -1382,5 +1395,15 @@ footer {
 @media (min-width: 1025px) {
   .weekly-battle-info {
     margin-left: 5rem;
+  }
+  
+  /* 桌面端：社交媒体卡片向上移动 */
+  .social-media-slideshow-wrapper > .social-media-container {
+    margin-top: -2rem;  /* 向上移动2rem */
+  }
+  
+  /* 桌面端：About Us和News卡片与上方卡片的间距 */
+  .homepage-grid-section {
+    margin: 1rem auto 0 auto;  /* 桌面端增加间距 */
   }
 }
