@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { searchData, searchItems } from '../data/searchData';
 
 export default function SearchBar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -9,16 +10,6 @@ export default function SearchBar() {
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const searchRef = useRef(null);
-
-  // 模拟搜索数据
-  const searchData = [
-    { id: 1, type: 'news', title: 'Tommy Leong: Back to Back Champion', url: '/news?id=1', excerpt: 'Congratulations to Tommy Leong for securing 1st place...' },
-    { id: 2, type: 'news', title: 'Nick Kee Secures 2nd Place in Malaysia MBL 2025', url: '/news?id=2', excerpt: 'Congratulations to Nick Kee for securing 2nd place...' },
-    { id: 101, type: 'article', title: 'Card Mania 2025 Champion [Gardevoir Ex] Post-Tournament Report', url: '/monki-insights?id=101', excerpt: 'This article will introduce Tommy Leong\'s deep thoughts on Gardevoir ex' },
-    { id: 1, type: 'page', title: 'About Us', url: '/about-us', excerpt: 'Learn more about Team Monki and our mission' },
-    { id: 2, type: 'page', title: 'Team Members', url: '/team-members', excerpt: 'Meet our team members and players' },
-    { id: 3, type: 'page', title: 'Contact Us', url: '/contact', excerpt: 'Get in touch with Team Monki' },
-  ];
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
@@ -37,12 +28,9 @@ export default function SearchBar() {
 
     setIsLoading(true);
     
-    // 模拟搜索延迟
+    // 使用优化后的搜索函数
     setTimeout(() => {
-      const results = searchData.filter(item => 
-        item.title.toLowerCase().includes(query.toLowerCase()) ||
-        item.excerpt.toLowerCase().includes(query.toLowerCase())
-      );
+      const results = searchItems(query);
       setSearchResults(results);
       setIsLoading(false);
     }, 300);

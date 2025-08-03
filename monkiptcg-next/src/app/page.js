@@ -11,107 +11,15 @@ import FloatingPartnerButton from '../components/FloatingPartnerButton';
 import SocialMediaSection from '../components/SocialMediaSection';
 import WeeklyBattleInfo from '../components/WeeklyBattleInfo';
 import Slideshow from '../components/Slideshow';
-
-// 简化版团队成员数据
-const teamMembers = [
-  {
-    img: '/images/team/leadership/captain.jpg',
-    name: 'Terry Chan',
-    role: 'Team Leader',
-  },
-  {
-    img: '/images/team/leadership/manager.jpg',
-    name: 'Bobby Ao',
-    role: 'Executive Assistant',
-  },
-  {
-    img: '/images/team/leadership/finance.jpg',
-    name: 'Keagan Soo',
-    role: 'Team Finance',
-  },
-  {
-    img: '/images/team/players/player1.jpg',
-    name: 'JustinWZD',
-    role: 'Main Player',
-  },
-  {
-    img: '/images/team/players/player2.jpg',
-    name: 'Yiam Wai Kit',
-    role: 'Main Player',
-  },
-  {
-    img: '/images/team/players/player3.jpg',
-    name: 'Tommy Leong',
-    role: 'Main Player',
-  },
-  {
-    img: '/images/team/players/player4.jpg',
-    name: 'Eden Lee',
-    role: 'Main Player',
-  },
-  {
-    img: '/images/team/players/player5.jpg',
-    name: 'Nick Kee',
-    role: 'Main Player',
-  },
-  {
-    img: '/images/team/players/player6.jpg',
-    name: 'Yoong Kai Jian',
-    role: 'Main Player',
-  },
-  {
-    img: '/images/team/players/player12.jpg',
-    name: 'Sammy',
-    role: 'Main Player',
-  },
-  // ... 可继续添加更多成员 ...
-];
-
-// 主页用真实新闻数据
-const newsData = [
-  {
-    id: 1,
-    title: "Tommy Leong: Back to Back Champion of TCGKL's Annual Biggest Tournament",
-    date: "June 1, 2025",
-    summary: "Congratulations to Tommy Leong for securing 1st place in TCGKL's Annual Biggest Tournament...",
-  },
-  {
-    id: 2,
-    title: "Monki Team Member - Nick Kee Secures 2nd Place in Malaysia MBL 2025",
-    date: "April 20, 2025",
-    summary: "Congratulations to Nick Kee for securing 2nd place in Malaysia MBL 2025...",
-  },
-];
-const previousNewsData = [
-  {
-    id: 101,
-    title: "Team Monki Member - Justin Wong Secures 2nd Place in Malaysia UBL Penang Section 2025",
-    date: "March 23, 2025",
-    summary: "Congratulations to our last ride \"Lugia佬(Lou)\" Justin Wong to win second place at Penang's Ultra Ball League!",
-  },
-];
-
-// 主页用真实文章数据
-const articlesData = [
-  {
-    id: 101,
-    title: "Card Mania 2025 Champion [Gardevoir Ex] Post-Tournament Report & Deck Guide",
-    author: "Tommy Leong",
-    date: "2025-04-15",
-    type: "free",
-    excerpt: "This article will introduce Tommy Leong's deep thoughts on Gardevoir ex",
-  },
-];
+import { homePageData } from '../data';
 
 export default function HomePage() {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const videoRef = useRef(null);
 
-  // 轮播索引
-  const [memberIndex, setMemberIndex] = useState(0);
-  const handlePrev = () => setMemberIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
-  const handleNext = () => setMemberIndex((prev) => (prev + 1) % teamMembers.length);
+  // 从数据文件获取数据
+  const { teamMembers, latestNews, previousNews, latestArticles } = homePageData;
 
   useEffect(() => {
     // Navbar background change on scroll
@@ -251,14 +159,13 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 中间 Team Members 卡片 */}
-            {/* 中间 Team Members 卡片 */}
+
 
             {/* 右侧 News 列表（上下贯穿） */}
             <div className="news-list-block">
               {/* 最新新闻 */}
               <div className="news-section-title">Latest News</div>
-              {newsData.slice(0,3).map(news => (
+              {latestNews.slice(0,3).map(news => (
                 <Link href={`/news?id=${news.id}`} key={news.id} className="news-list-item news-list-link">
                   <div className="news-list-title">{news.title}</div>
                   <div className="news-list-date">{news.date}</div>
@@ -267,7 +174,7 @@ export default function HomePage() {
               ))}
               {/* 往期新闻 */}
               <div className="news-section-title">Previous News</div>
-              {previousNewsData.slice(0,2).map(news => (
+              {previousNews.slice(0,2).map(news => (
                 <Link href={`/news?id=${news.id}`} key={news.id} className="news-list-item news-list-link">
                   <div className="news-list-title">{news.title}</div>
                   <div className="news-list-date">{news.date}</div>
@@ -280,7 +187,7 @@ export default function HomePage() {
             {/* 下方横跨中间和右侧 Article 区块 */}
             <div className="article-block">
               <div className="article-section-title">Latest Articles</div>
-              {articlesData.slice(0,3).map(article => (
+              {latestArticles.slice(0,3).map(article => (
                 <Link href={`/monki-insights?id=${article.id}`} key={article.id} className="article-list-item article-list-link">
                   <div className="article-list-title">{article.title}</div>
                   <div className="article-list-meta">
