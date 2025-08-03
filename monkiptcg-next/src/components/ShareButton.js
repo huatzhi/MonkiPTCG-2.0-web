@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { shareConfig, shareToPlatform } from '../data/shareConfig';
 
 export default function ShareButton({ url, title, description }) {
@@ -13,20 +13,20 @@ export default function ShareButton({ url, title, description }) {
     setCurrentUrl(window.location.href);
   }, []);
 
-  const shareData = {
+  const shareData = useMemo(() => ({
     url: url || currentUrl,
     title: title || shareConfig.defaultTitle,
     description: description || shareConfig.defaultDescription,
-  };
+  }), [url, currentUrl, title, description]);
 
-  const toggleShare = () => {
+  const toggleShare = useCallback(() => {
     setIsShareOpen(!isShareOpen);
-  };
+  }, [isShareOpen]);
 
-  const handleShare = (platform) => {
+  const handleShare = useCallback((platform) => {
     shareToPlatform(platform, shareData.url, shareData.title);
     setIsShareOpen(false);
-  };
+  }, [shareData.url, shareData.title]);
 
   // 点击外部关闭分享菜单
   useEffect(() => {

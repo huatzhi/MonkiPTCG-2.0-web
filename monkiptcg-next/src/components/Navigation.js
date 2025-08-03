@@ -71,38 +71,71 @@ export default function Navigation() {
       </div>
       
       {/* Hamburger Menu Button */}
-      <div className="hamburger-menu" onClick={toggleMenu}>
+      <button 
+        className="hamburger-menu" 
+        onClick={toggleMenu}
+        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={isMenuOpen}
+        aria-controls="nav-links"
+      >
         <div className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
         <div className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
         <div className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
-      </div>
+      </button>
 
       {/* Navigation Links */}
-      <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <li><Link href="/" onClick={closeMenu}>Home</Link></li>
-        <li className={`dropdown ${isDropdownOpen ? 'open' : ''}`} ref={dropdownRef}>
+      <ul 
+        id="nav-links"
+        className={`nav-links ${isMenuOpen ? 'open' : ''}`}
+        role="menubar"
+        aria-label="Main navigation"
+      >
+        <li role="none">
+          <Link href="/" onClick={closeMenu} role="menuitem">Home</Link>
+        </li>
+        <li className={`dropdown ${isDropdownOpen ? 'open' : ''}`} ref={dropdownRef} role="none">
           <a 
-            href="#about" 
+            href="#about"
+            className="dropdown-toggle"
             onClick={toggleDropdown} 
             onTouchEnd={(e) => {
               e.preventDefault();
               toggleDropdown(e);
             }}
+            aria-expanded={isDropdownOpen}
+            aria-haspopup="true"
+            aria-label="About submenu"
             style={{ cursor: 'pointer' }}
           >
             About
           </a>
-          <ul className="dropdown-content">
-            <li><Link href="/about-us" onClick={closeMenu}>About Us</Link></li>
-            <li><Link href="/socials" onClick={closeMenu}>Socials</Link></li>
-            <li><Link href="/journey" onClick={closeMenu}>Journey</Link></li>
-            <li><Link href="/partners" onClick={closeMenu}>Partners</Link></li>
+          <ul className="dropdown-content" role="menu" aria-label="About submenu">
+            <li role="none">
+              <Link href="/about-us" onClick={closeMenu} role="menuitem">About Us</Link>
+            </li>
+            <li role="none">
+              <Link href="/socials" onClick={closeMenu} role="menuitem">Socials</Link>
+            </li>
+            <li role="none">
+              <Link href="/journey" onClick={closeMenu} role="menuitem">Journey</Link>
+            </li>
+            <li role="none">
+              <Link href="/partners" onClick={closeMenu} role="menuitem">Partners</Link>
+            </li>
           </ul>
         </li>
-        <li><Link href="/team-members" onClick={closeMenu}>Team Members</Link></li>
-        <li><Link href="/news" onClick={closeMenu}>News</Link></li>
-        <li><Link href="/monki-insights" onClick={closeMenu}>Monki Insights</Link></li>
-        <li><Link href="/contact" onClick={closeMenu}>Contact Us</Link></li>
+        <li role="none">
+          <Link href="/team-members" onClick={closeMenu} role="menuitem">Team Members</Link>
+        </li>
+        <li role="none">
+          <Link href="/news" onClick={closeMenu} role="menuitem">News</Link>
+        </li>
+        <li role="none">
+          <Link href="/monki-insights" onClick={closeMenu} role="menuitem">Monki Insights</Link>
+        </li>
+        <li role="none">
+          <Link href="/contact" onClick={closeMenu} role="menuitem">Contact Us</Link>
+        </li>
       </ul>
 
       {/* Action Buttons */}

@@ -243,6 +243,10 @@ footer {
     width: 30px;
     height: 25px;
     justify-content: space-between;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 .hamburger-line {
@@ -324,6 +328,10 @@ footer {
         transform: translateY(-50%);
         z-index: 1003;  /* 提高层叠顺序 */
         margin-left: 0;  /* 移除margin-left */
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
     }
 
     .nav-links {
@@ -454,6 +462,25 @@ footer {
         color: #10e07f;
     }
 
+    /* Dropdown toggle button styles */
+    .dropdown-toggle {
+        color: #fff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: color 0.3s ease;
+        font-size: 1rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-toggle:hover {
+        color: #10e07f;
+    }
+
     /* Dropdown indicator for mobile */
     .dropdown > a::after {
         content: '▼';
@@ -511,6 +538,10 @@ footer {
         width: 25px;
         height: 20px;
         z-index: 1003;  /* 确保层级 */
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
     }
 
     .nav-links {
@@ -569,6 +600,10 @@ footer {
         width: 22px;
         height: 18px;
         z-index: 1003;  /* 确保层级 */
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
     }
 
     .hamburger-line {

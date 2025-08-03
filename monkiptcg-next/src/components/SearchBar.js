@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { searchData, searchItems } from '../data/searchData';
+import LoadingSpinner from './LoadingSpinner';
 
 export default function SearchBar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -11,15 +12,15 @@ export default function SearchBar() {
   const [isLoading, setIsLoading] = useState(false);
   const searchRef = useRef(null);
 
-  const toggleSearch = () => {
+  const toggleSearch = useCallback(() => {
     setIsSearchOpen(!isSearchOpen);
     if (!isSearchOpen) {
       setSearchQuery('');
       setSearchResults([]);
     }
-  };
+  }, [isSearchOpen]);
 
-  const handleSearch = (query) => {
+  const handleSearch = useCallback((query) => {
     setSearchQuery(query);
     if (query.trim().length === 0) {
       setSearchResults([]);
@@ -34,13 +35,13 @@ export default function SearchBar() {
       setSearchResults(results);
       setIsLoading(false);
     }, 300);
-  };
+  }, []);
 
-  const handleResultClick = () => {
+  const handleResultClick = useCallback(() => {
     setIsSearchOpen(false);
     setSearchQuery('');
     setSearchResults([]);
-  };
+  }, []);
 
   // 点击外部关闭搜索
   useEffect(() => {
@@ -111,8 +112,7 @@ export default function SearchBar() {
             <div className="search-results">
               {isLoading && (
                 <div className="search-loading">
-                  <div className="loading-spinner"></div>
-                  <span>Searching...</span>
+                  <LoadingSpinner size="small" text="Searching..." />
                 </div>
               )}
 
